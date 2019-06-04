@@ -3,8 +3,7 @@ $.validator.addMethod("isPhoneNumber",function (value,element) {
     var length = value.length;
 	var res = (length ===  11 && /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(value));
 	if(res == false){
-		$("#btnSendCode").attr("disabled", "disabled");
-        $("#bk_yzm").attr("disabled", "disabled");            
+		$("#btnSendCode").attr("disabled", "disabled");            
 	}
     return this.optional(element) || res;
 });
@@ -29,7 +28,6 @@ $.validator.addMethod("isBankCardNo", function (value, element) {
 	var res = isBankCardNo(value);
 	if (isBankCardNo(value)== false){
 		$("#bank_SendCode").attr("disabled","disabled");
-		$("#bk_yzm").attr("disabled","disabled");
 	}
 	else{
 		$("#bank_SendCode").attr("disabled",false);
@@ -52,8 +50,7 @@ $.validator.addMethod("isRegisted", function (value, element) {
             }),
             dataType: "json",
             success: function (message) {
-                if (message.state == "unregister") {
-					
+                if (message.state == "unregister") {				
                     $("#btnSendCode").attr("disabled", false);
                     res = true;
                 } else {
@@ -86,7 +83,6 @@ $.validator.addMethod("isunRegisted", function (value, element) {
             dataType: "json",
             success: function (message) {
                 if (message.state == "unregister") {
-
                     res = false;
                 } else {
                     res = true;
@@ -153,16 +149,13 @@ $(document).ready(function () {
 		var time = 60;
 		function settime(obj){
             if (time===0) {
-				$("#phone_num").attr('disabled',false);
-				$("#yzm").val("");
-				$("#yzm").attr('disabled','disabled');
+		$("#phone_num").attr('disabled',false);
                 $(obj).attr('disabled', false);
                 $(obj).html("重新获取");
                 time = 60;
                 return;
             } else{
-				$("#phone_num").attr('disabled','disabled');
-				$("#yzm").attr('disabled',false);
+		$("#phone_num").attr('disabled','disabled');
                 $(obj).attr('disabled', 'disabled');
                 $(obj).html(time+"秒重新发送");
                 time--;                
@@ -200,17 +193,14 @@ $(document).ready(function () {
         var time = 60;
         function settime(obj){
               if (time===0) {
-				$("#bank_number").attr('disabled',false);
+		$("#bank_number").attr('disabled',false);
                 $(obj).attr('disabled', false);
-				$("#bk_yzm").attr('value',""); 
-				$("#bk_yzm").attr('disabled',true);
                 $(obj).html("重新获取");
                 time = 60;
                 return;
             } else{
-				$("#bank_number").attr('disabled',true);
+		$("#bank_number").attr('disabled',true);
                 $(obj).attr('disabled', true);
-				$("#bk_yzm").attr('disabled',false);
                 $(obj).html(time+"秒重新发送");
                 time--;                
 				}
@@ -256,13 +246,13 @@ $(document).ready(function () {
             "user_name": $("#user_name").val(),
             "id_card": $("#id_card").val(),
             "bank_account": $("#bank_number").val(),
-			"verify_code": $("#bk_yzm").val()
+	    "verify_code": $("#bk_yzm").val()
         }),
         dataType: "json",
         success: function (message) {
             if (message.state == "successful" ) {
                 alert("注册成功！");
-				location.href = "login.html";
+		location.href = "login.html";
             }
         },
         error: function () {
