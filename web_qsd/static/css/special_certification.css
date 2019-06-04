@@ -1,0 +1,18 @@
+#file_img {
+    background-color: white;
+}
+
+#upload {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+#upload_file {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    opacity: 0;
+    -ms-filter: "alpha(opacity=0)";
+    font-size: 200px;
+}

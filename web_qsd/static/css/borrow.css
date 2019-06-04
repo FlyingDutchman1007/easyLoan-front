@@ -1,0 +1,23 @@
+.checkbox-model {
+    display: inline-block;
+}
+
+.outer_circle {
+    display: inline-block;
+    background-color: #1cd8c9;
+    height: 16px;
+    width: 16px;
+    border: none;
+    border-radius: 8px;
+}
+
+.inner_circle {
+    display: inline-block;
+    background-color: transparent;
+    height: 8px;
+    width: 8px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 4px;
+    margin-left: 4px;
+}
