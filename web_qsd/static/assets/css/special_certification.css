@@ -1,0 +1,29 @@
+.color-black {
+	color : black;
+}
+
+.file {
+	position: relative;
+	display: inline-block;
+	background: #1cd8c9;
+	border: 1px solid #1cd8c9;
+	border-radius: 4px;
+	padding: 8px 30px;
+	overflow: hidden;
+	color: #ffffff;
+	text-decoration: none;
+	text-indent: 0;
+}
+.file input {
+	position: absolute;
+	font-size: 100px;
+	right: 0;
+	top: 0;
+	opacity: 0;
+}
+.file:hover {
+	background: #701c7e;
+	border-color: #9124a3;
+	color: #ffffff;
+	text-decoration: none;
+}

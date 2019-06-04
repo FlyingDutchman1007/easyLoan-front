@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>借入方>意向借入</title>
+	<link rel="icon" href="/static/images/qsd_logo.ico" sizes="48x48" type="image/x-icon"/>
+    <!-- custom-theme -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript">
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+
+    </script>
+    <script type="text/javascript">
+        function clickApply(){
+            var intendMoney=Number(document.getElementById("intend_money").value);
+            var rate=Number(document.getElementById("rate").value);
+            var limitMonths=Number(document.getElementById("limit_months").value);
+            var monthly=document.getElementById("monthly");
+            var seasonally=document.getElementById("seasonally");
+            if(isNaN(intendMoney) || intendMoney%100!=0){
+                alert("金额请填写100的整数倍的数字");
+            } else if(isNaN(rate) || rate<0 || rate>36){
+                alert("利率请填写大于0不大于36的数字");
+            } else if(![1,2,3,6,12,24,36].includes(limitMonths)){
+                alert("期限必须是1，2，3，6，12，24，36中的一个");
+            } else if(monthly.style.backgroundColor!="white" && seasonally.style.backgroundColor!="white"){
+                alert("请选择还款方式");
+            }
+        }
+        function clickMonthly(){
+            var monthly=document.getElementById("monthly");
+            var seasonally=document.getElementById("seasonally");
+            seasonally.style.backgroundColor="transparent";
+            monthly.style.backgroundColor="white";
+        }
+        function clickSeasonally(){
+            var monthly=document.getElementById("monthly");
+            var seasonally=document.getElementById("seasonally");
+            monthly.style.backgroundColor="transparent";
+            seasonally.style.backgroundColor="white";
+        }
+    </script>
+	<link href="/static/css/footer.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/static/css/borrow.css" rel="stylesheet" type="text/css">
+    <!-- //custom-theme -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- font-awesome-icons -->
+    <link href="/static/css/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome-icons -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+</head>
+
+<body>
+
+	<!-- banner -->
+
+	<div class="main_section_agile inner" id="home">
+		<div class="agileits_w3layouts_banner_nav">
+
+			<nav class="navbar navbar-default">
+				<div class="navbar-header navbar-left">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				<h1><a class="navbar-brand" href="/resources/borrower/index_borrower"> <i class="fa fa-tree"></i> 青松贷</a></h1>
+
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+					<nav class="link-effect-2" id="link-effect-2">
+						<ul class="nav navbar-nav">
+							<li><a href="/resources/borrower/index_borrower" class="effect-3">首页</a></li>
+							<li><a href="/resources/borrower/business_intro" class="effect-3">业务简介</a></li>
+							<li class="active"><a href="/resources/borrower/borrow" class="effect-3">我要借入</a></li>
+							<li><a href="/resources/borrower/fund_account" class="effect-3">个人中心</a></li>
+						</ul>
+						</ul>
+					</nav>
+				</div>
+			</nav>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!-- //banner -->
+	
+<!-- /borrow -->
+<div class="banner-bottom inner">
+    <div class="container">
+        <div class="agile_wthree_inner_grids">
+           
+            <div class="contact-form agile_inner_grids">
+                <div class="wthree_head_section">
+                    <h3 class="w3l_header w3_agileits_header">申请 <span>借入 </span></h3>
+                </div>
+                <form action="/trade/borrower/loan" method="post" enctype="multipart/form-data">
+                    <div class="fields-grid">
+					   <label>可用额度<span id="limit">--</span>
+					   </br></label>
+                        <div class="styled-input agile-styled-input-top">
+                            <input type="text" name="intend_money" required="" id="intend_money" placeholder="                    必须是100的整数倍" onmouseleave="leaveIntendMoney()">
+                            <label>金额（￥）</label>
+                            <span></span>
+                        </div>
+                        <div class="styled-input agile-styled-input-top">
+                            <input type="text" name="rate" required="" id="rate" placeholder="                        36及以下的数字" onmouseleave="leaveRate()">
+                            <label>年利率（%）</label>
+                            <span></span>
+                        </div>
+                        <div class="styled-input">
+                            <input type="text" name="limit_months" required="" id="limit_months" placeholder="                    1、2、3、6、12、24或36" onmouseleave="leaveLimitMonths()">
+                            <label>期限（月）</label>
+                            <span></span>
+                        </div>
+						
+						<select name="pay_type">
+							<option value="1">按月付</option>
+							<option value="3">按季度付</option>
+						</select>
+						
+						<div class="checkbox-model"></div>
+                    </div>
+
+                    <input type="submit" value="确认申请" id="apply" onclick="clickApply()">
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<!-- //borrow -->
+
+<!-- footer -->
+	<div class="footer">
+		<div class="f-bg-w3l">
+				<div class="col-md-3 w3layouts_footer_grid">
+					<h2>获取 <span>推送</span></h2>
+					<p id="push-1">通过提交邮箱,获取最新推送</p>
+					<form action="#" method="post">
+						<input type="email" name="Email" placeholder="请输入您的邮箱" required="">
+						<button class="btn1"><i class="fa fa-envelope-o" aria-hidden="true"></i></button>
+						<div class="clearfix"> </div>
+					</form>
+					
+				
+				</div>
+				<div class="col-md-4 w3layouts_footer_grid">
+					<h3>扫码 <span>关注</span></h3>
+					 <ul class="con_inner_text midimg">
+						<li><a><img id="logo-1" src="/static/images/index_images/pic1.jpg" alt="" class="img-responsive" /></a><p class="p-1">官方QQ群</p></li>
+					    <li><a><img  alt="" class="img-responsive" /></a></li>
+						<li><a><img  id="logo-2" src="/static/images/index_images/pic1.jpg" alt="" class="img-responsive" /></a><p class="p-2">微信公众号</p></li>
+				     </ul>
+					
+				</div>
+				<div class="col-md-2 w3layouts_footer_grid">
+					<h3>网站 <span>链接</span> </h3>
+					  <ul class="links">
+							<li><a id="footer-link-1" href="/resources/borrower/index_borrower">首页</a></li>
+							<li><a id="footer-link-2" href="/resources/borrower/business_intro">业务简介</a></li>
+							<li><a id="footer-link-3" href="/resources/borrower/borrow">我要借入</a></li>
+							<li><a id="footer-link-6" href="/resources/borrower/fund_account">个人中心</a></li>
+						</ul>
+				</div>
+				<div class="col-md-3 w3layouts_footer_grid">
+					<h2>联系 <span>我们</span></h2>
+					    <ul class="con_inner_text">
+							<li><span id="logo-3" class="fa fa-map-marker" aria-hidden="true"></span><a id="address">辽宁省沈阳市浑南区创新路195号<label>东北大学(浑南校区)</label></a></li>
+							<li><span id="logo-4"class="fa fa-envelope-o" aria-hidden="true"></span> <a><a  id="mail" href="mailto:1048737310@qq.com">1048737310@qq.com</a></a></li>
+							<li><span id="logo-5" class="fa fa-phone" aria-hidden="true"></span><a id="phone"> +86 18640372196</a></li>
+						</ul>
+
+					<ul class="social_agileinfo">
+						<li><a href="#" class="w3_facebook"><i class="fa fa-qq"></i></a></li>
+						<li><a href="#" class="w3_twitter"><i class="fa fa-wechat"></i></a></li>
+						<li><a href="#" class="w3_instagram"><i class="fa fa-weibo"></i></a></li>
+						<li><a href="#" class="w3_google"><i class="fa fa-twitter"></i></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+	</div>
+	<!-- //footer -->
+	
+
+<!-- js -->
+<script type="text/javascript" src="/static/js/jquery-2.2.4.min.js"></script>
+<!-- //js -->
+<script src="/static/js/modernizr-2.6.2.min.js"></script>
+<!-- //nav -->
+<script type="text/javascript" src="/static/js/bootstrap-3.1.1.min.js"></script>
+<script>
+$(document).ready(function () {
+        $.ajax({
+        type: "GET",
+        url: "/trade/borrower/limit",
+        dataType: "json",
+        success: function (message) {
+           	$("#limit").text(message.limit);
+        },
+        error: function () {
+			$("#limit").text("---");
+        }
+	})
+});
+</script>
+<!-- //js for index footer -->
+<script src="/static/js/footer.js"></script>
+
+</body>
+
+</html>
