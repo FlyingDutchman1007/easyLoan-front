@@ -11,17 +11,17 @@ $("#borrower_withdraw").click(function () {
             alert(message.state);
             if(message.state == "successful") {
                 alert("充值成功");
-                location.href = "/resources/lender/fund_account";
+                location.href = "/resources/borrower/fund_account";
             }
             else{
                 alert("充值失败，请重新充值~");
-                location.href = "/resources/lender/fund_account";
+                location.href = "/resources/borrower/fund_account";
             }
 
         },
         error: function () {
             alert("充值失败，请重新充值~");
-            location.href = "/resources/lender/fund_account";
+            location.href = "/resources/borrower/fund_account";
         }
     })
 });
