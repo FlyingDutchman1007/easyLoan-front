@@ -184,8 +184,8 @@
                                     </tbody>
                                 </table>
                                 <div class="form-control">
-                                    <button type="button" class="btn btn-success" id="recharge">充值</button>
-                                    <button type="button" class="btn btn-success" id="withdraw">提现</button>
+                                    <button type="button" class="btn btn-success" id="recharge" data-toggle="modal" data-target="#modalTable">充值</button>
+                                    <button type="button" class="btn btn-success" id="withdraw" data-toggle="modal" data-target="#modalTable1">提现</button>
                                 </div>
                             </div>
                         </div>
@@ -215,6 +215,58 @@
         </div>
     </div>
 </div>
+	
+<!-- deposit -->
+<div id="modalTable" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-dark"><strong>充值</strong></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <h5>输入要充值的金额</h5>
+                    <!--
+                    <input type="text"  onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')"  class="form-control" name="money" id="b_deposit_money" placeholder="最少充值10元" >
+                    -->
+                    <input type="text"  onkeyup="this.value=depositNumberCheck(this.value)"  class="form-control" name="money" id="b_deposit_money" placeholder="最少充值10元" >
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="borrower_deposit">充值</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- withdraw -->
+<div id="modalTable1" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-dark"><strong>提现</strong></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <h5>输入要提现的金额</h5>
+                    <input type="text" onkeyup="this.value=withdrawNumberCheck(this.value)"  class="form-control" name="money" id="b_withdraw_money" placeholder="提现金额小于账户余额" >
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="borrower_withdraw">提现</button>
+            </div>
+        </div>
+    </div>
+</div>
+	
 <!--   Core JS Files   -->
 <script src="/static/assets/js/core/jquery.min.js"></script>
 <script src="/static/assets/js/core/popper.min.js"></script>
@@ -233,6 +285,10 @@
     });
 </script>
 <script src="/static/assets/js/fund_account_br.js"></script>
+<script src="/static/js/borrower_deposit.js"></script>
+<script src="/static/js/borrower_withdraw.js"></script>
+<script src="/static/js/deposit_judge.js"></script>
+<script src="/static/js/withdraw_judge.js"></script>
 </body>
 
 </html>
