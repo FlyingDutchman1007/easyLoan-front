@@ -23,7 +23,7 @@ $(document).ready(function () {
 
 $("#save_button").click(function(){
     $.ajax({
-        type: "POST",
+        type: "PUT",
         url: "/information/lender/information",
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
