@@ -11,7 +11,7 @@ $(document).ready(function () {
             $("#educational_level").val("\t\t " + res.educational_level);
             $("#marriage").val("\t\t " + res.marriage);
             $("#address").val("\t " + res.address);
-            $("#avatar").src(res.avatar);
+            //$("#avatar").src(res.avatar);
         },
 
         error: function() {
