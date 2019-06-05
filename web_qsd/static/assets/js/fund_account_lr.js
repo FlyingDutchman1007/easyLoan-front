@@ -11,7 +11,7 @@ $(document).ready(
             $("#current_income").text(res.current_income);
             $("#expected_income").text(res.expected_income);
 	    $("#lend_money").text(res.lend_money);
-            $("#available_money").text(res.available);
+            $("#available_money").text(res.available_money);
         },
         error: function() {}
 
