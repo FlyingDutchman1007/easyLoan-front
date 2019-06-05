@@ -212,10 +212,10 @@
                                                 <p class="card-category">认证福利</p>
                                                 <hr>
                                                 <h3 class="card-title">更多借入额度</h3>
-                                                <input type="button" class="btn btn-primary" value="了解一下">
+                                                <input type="button" class="btn btn-primary" id="trick_1" value="了解一下">
                                                 <hr>
                                                 <h3 class="card-title">更多利率优惠</h3>
-                                                <input type="button" class="btn btn-primary" value="了解一下">
+                                                <input type="button" class="btn btn-primary" id="trick_2" value="了解一下">
                                             </div>
                                         </div>
                                     </div>
@@ -248,6 +248,14 @@
   <script src="/static/assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="/static/assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
+  <script>
+	  $("#trick_1").click(function(){
+		  alert("其实并没有，气不气~");
+	  })
+	  $("#trick_2").click(function(){
+		  alert("还是算了，打扰了~");
+	  })
+  </script>
 </body>
 
 </html>
