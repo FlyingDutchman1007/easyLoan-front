@@ -18,37 +18,7 @@
         }
 
     </script>
-    <script type="text/javascript">
-        function clickApply(){
-            var intendMoney=Number(document.getElementById("intend_money").value);
-            var rate=Number(document.getElementById("rate").value);
-            var limitMonths=Number(document.getElementById("limit_months").value);
-            var monthly=document.getElementById("monthly");
-            var seasonally=document.getElementById("seasonally");
-            if(isNaN(intendMoney) || intendMoney%100!=0){
-                alert("金额请填写100的整数倍的数字");
-            } else if(isNaN(rate) || rate<0 || rate>36){
-                alert("利率请填写大于0不大于36的数字");
-            } else if(![1,2,3,6,12,24,36].includes(limitMonths)){
-                alert("期限必须是1，2，3，6，12，24，36中的一个");
-            } else if(monthly.style.backgroundColor!="white" && seasonally.style.backgroundColor!="white"){
-                alert("请选择还款方式");
-            }
-        }
-        function clickMonthly(){
-            var monthly=document.getElementById("monthly");
-            var seasonally=document.getElementById("seasonally");
-            seasonally.style.backgroundColor="transparent";
-            monthly.style.backgroundColor="white";
-        }
-        function clickSeasonally(){
-            var monthly=document.getElementById("monthly");
-            var seasonally=document.getElementById("seasonally");
-            monthly.style.backgroundColor="transparent";
-            seasonally.style.backgroundColor="white";
-        }
-    </script>
-	<link href="/static/css/footer.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/static/css/footer.css" rel="stylesheet" type="text/css" media="all" />
     <link href="/static/css/borrow.css" rel="stylesheet" type="text/css">
     <!-- //custom-theme -->
     <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -61,9 +31,7 @@
 </head>
 
 <body>
-
 	<!-- banner -->
-
 	<div class="main_section_agile inner" id="home">
 		<div class="agileits_w3layouts_banner_nav">
 
@@ -105,7 +73,7 @@
                 <div class="wthree_head_section">
                     <h3 class="w3l_header w3_agileits_header">申请 <span>借入 </span></h3>
                 </div>
-                <form action="/trade/borrower/loan" method="post" enctype="multipart/form-data">
+                <form action="#" method="post" enctype="multipart/form-data">
                     <div class="fields-grid">
 					   <label>可用额度<span id="limit">--</span>
 					   </br></label>
@@ -115,25 +83,23 @@
                             <span></span>
                         </div>
                         <div class="styled-input agile-styled-input-top">
-                            <input type="text" name="rate" required="" id="rate" placeholder="                        36及以下的数字" onmouseleave="leaveRate()">
+                            <input type="text" name="rate" required="" id="rate" placeholder="  36及以下的数字" onmouseleave="leaveRate()">
                             <label>年利率（%）</label>
                             <span></span>
                         </div>
                         <div class="styled-input">
-                            <input type="text" name="limit_months" required="" id="limit_months" placeholder="                    1、2、3、6、12、24或36" onmouseleave="leaveLimitMonths()">
+                            <input type="text" name="limit_months" required="" id="limit_months" placeholder="1、2、3、6、12、24或36" onmouseleave="leaveLimitMonths()">
                             <label>期限（月）</label>
                             <span></span>
                         </div>
-						
-						<select name="pay_type">
-							<option value="1">按月付</option>
-							<option value="3">按季度付</option>
-						</select>
-						
-						<div class="checkbox-model"></div>
+				<select name="pay_type" id="pay_type">
+					<option value="1">按月付</option>
+					<option value="3">按季度付</option>
+				</select>	
+				<div class="checkbox-model"></div>
                     </div>
 
-                    <input type="submit" value="确认申请" id="apply" onclick="clickApply()">
+                    <button type="buttton" class="btn btn-success" id="btn_submit">提交借入申请</button>
                 </form>
             </div>
             <div class="clearfix"> </div>
@@ -215,6 +181,34 @@ $(document).ready(function () {
         }
 	})
 });
+$("#btn_submit").click(function(this){
+	$.ajax({
+        type: "POST",
+        url: "/trade/borrower/loan",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({
+            "intend_money": $("#intend_money").val(),
+            "password": $("#rate").val(),
+            "pay_type": $('#pay_type').val(),
+            "limit_months": $("limit_months").val(),
+        }),
+        dataType: "json",
+        success: function (message) {
+            if (message.state == "successful" ) {
+                alert("提交成功");
+		location.href = "/resources/borrower/borrow";
+            }else{
+		alert("借款额度不足");
+		location.href = "/resources/borrower/borrow"        
+		}
+        },
+        error: function () {
+            alert("提交失败，请稍后再试~");
+	    location.href = "/resources/borrower/borrow"
+        }
+})
+
+})
 </script>
 <!-- //js for index footer -->
 <script src="/static/js/footer.js"></script>
