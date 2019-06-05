@@ -35,7 +35,7 @@ $("#save_button").click(function(){
             "phone_number": $("#phone_number").val().trim(),
             "profession": $("#profession").val().trim(),
             "sex": $("#sex").val().trim(),
-            "user_name": $("#user_name").val().trim(),
+            //"user_name": $("#user_name").val().trim(),
             "special_certification": $("#special_certification").val().trim()
         }),
         dataType: "json",
