@@ -10,7 +10,7 @@ $(document).ready(
             $("#account_balance").text(res.user_balance);
             $("#current_income").text(res.current_income);
             $("#expected_income").text(res.expected_income);
-			$("#lend_money").text(res.lend_money);
+	    $("#lend_money").text(res.lend_money);
             $("#available_money").text(res.available);
         },
         error: function() {}
