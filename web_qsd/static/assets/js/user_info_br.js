@@ -4,23 +4,15 @@ $(document).ready(function () {
         url: "/information/borrower/information",
         dataType: "json",
         success: function(res) {
-            var address = "\t " + "未填写";
-            var special_identity = "\t " + "未认证";
-            if(res.address != null || res.address !=""){
-                address = "\t " + res.address;       
-            }
-            if(res.special_identity == 1){
-                special_identity = "\t " + "已认证";       
-            }
             if(res.special_identity )
-            $("#special_certification").val(special_identity);
+            $("#special_certification").val( "\t "+res.special_identity);
             $("#user_name").val("\t " + res.user_name);
             $("#phone_number").val("\t\t" + res.phone_number);
-            $("#sex").val("\t " + res.sex);
+            $("#sex").val("\t" + res.sex);
             $("#profession").val("\t " + res.profession);
             $("#educational_level").val("\t\t " + res.educational_level);
             $("#marriage").val("\t\t " + res.marriage);
-            $("#address").val(address);
+            $("#address").val("\t"+res.address);
             //$("#avatar").src(res.avatar);
         },
 
