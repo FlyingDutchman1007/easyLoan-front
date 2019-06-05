@@ -4,7 +4,6 @@ $(document).ready(function () {
         url: "/information/borrower/information",
         dataType: "json",
         success: function(res) {
-            if(res.special_identity )
             $("#special_certification").val( "\t "+res.special_identity);
             $("#user_name").val("\t " + res.user_name);
             $("#phone_number").val("\t\t" + res.phone_number);
