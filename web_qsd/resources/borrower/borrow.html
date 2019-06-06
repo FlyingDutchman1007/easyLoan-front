@@ -187,9 +187,9 @@ $("#btn_submit").click(function(){
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
             "intend_money": $("#intend_money").val(),
-            "password": $("#rate").val(),
+            "rate": $("#rate").val(),
             "pay_type": $('#pay_type').val(),
-            "limit_months": $("limit_months").val(),
+            "limit_months": $("#limit_months").val(),
         }),
         dataType: "json",
         success: function (message) {
