@@ -124,6 +124,31 @@ $.validator.addMethod("isCodeRight", function (value, element) {
     return this.optional(element) || res;
 });
 
+// 验证图片大小(前)
+$.validator.addMethod("istoolarge_1", function (value, element){
+		var res = true;
+		var file = $("#idcard_front").get(0).files[0];
+        var fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100);        
+		if (fileSize > 5) {
+			res = false;
+		}
+        alert(fileSize);
+        alert(res);
+        return this.optional(element) || res;
+	});
+// 验证图片大小（后）
+$.validator.addMethod("istoolarge_2", function (value, element){
+		var res = true;
+		var file = $("#idcard_back").get(0).files[0];
+        var fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100);        
+		if (fileSize > 5) {
+			res = false;
+		}
+        alert(fileSize);
+        alert(res);
+        return this.optional(element) || res;
+	});
+
 function isBankCardNo(bk_num){
     if (bk_num.length < 15 && bk_num.length > 20) {
        return false;
