@@ -10,17 +10,17 @@ $("#lender_withdraw").click(function () {
         success: function (message) {
             alert(message.state);
                 if(message.state == "successful") {
-                    alert("充值成功");
+                    alert("提现成功");
                     location.href = "/resources/lender/fund_account";
                 }
                 else{
-                    alert("充值失败，请重新充值~");
+                    alert("提现失败，请重新提现~");
                     location.href = "/resources/lender/fund_account";
                 }
 
         },
         error: function () {
-            alert("充值失败，请重新充值~");
+            alert("发送失败，请稍后再试~");
             location.href = "/resources/lender/fund_account";
         }
     })
