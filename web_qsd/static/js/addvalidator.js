@@ -132,8 +132,6 @@ $.validator.addMethod("istoolarge_1", function (value, element){
 		if (fileSize > 5) {
 			res = false;
 		}
-        alert(fileSize);
-        alert(res);
         return this.optional(element) || res;
 	});
 // 验证图片大小（后）
@@ -144,8 +142,6 @@ $.validator.addMethod("istoolarge_2", function (value, element){
 		if (fileSize > 5) {
 			res = false;
 		}
-        alert(fileSize);
-        alert(res);
         return this.optional(element) || res;
 	});
 
