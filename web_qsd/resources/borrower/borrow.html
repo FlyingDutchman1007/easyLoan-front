@@ -78,17 +78,17 @@
 					   <label>可用额度<span id="limit">--</span>
 					   </br></label>
                         <div class="styled-input agile-styled-input-top">
-                            <input type="text" name="intend_money" required="" id="intend_money" placeholder="                    必须是100的整数倍" onmouseleave="leaveIntendMoney()">
+                            <input type="text" name="intend_money" required="" id="intend_money" placeholder="             必须是100的整数倍"/>
                             <label>金额（￥）</label>
                             <span></span>
                         </div>
                         <div class="styled-input agile-styled-input-top">
-                            <input type="text" name="rate" required="" id="rate" placeholder="  36及以下的数字" onmouseleave="leaveRate()">
+                            <input type="text" name="rate" required="" id="rate" placeholder="             36及以下的数字" />
                             <label>年利率（%）</label>
                             <span></span>
                         </div>
                         <div class="styled-input">
-                            <input type="text" name="limit_months" required="" id="limit_months" placeholder="1、2、3、6、12、24或36" onmouseleave="leaveLimitMonths()">
+                            <input type="text" name="limit_months" required="" id="limit_months" placeholder="             1、2、3、6、12、24或36"/>
                             <label>期限（月）</label>
                             <span></span>
                         </div>
@@ -177,12 +177,12 @@ $(document).ready(function () {
            	$("#limit").text(message.limit);
         },
         error: function () {
-			$("#limit").text("---");
+		$("#limit").text("---");
         }
 	})
 });
 
-$("#btn_submit").click(function(this){
+$("#btn_submit").click(function(){
 	$.ajax({
         type: "POST",
         url: "/trade/borrower/loan",
@@ -200,12 +200,12 @@ $("#btn_submit").click(function(this){
 		location.href = "/resources/borrower/borrow";
             }else{
 		alert("借款额度不足");
-		location.href = "/resources/borrower/borrow"        
+		location.href = "/resources/borrower/borrow";        
 		}
         },
         error: function () {
             alert("提交失败，请稍后再试~");
-	    location.href = "/resources/borrower/borrow"
+	    location.href = "/resources/borrower/borrow";
         }
 	})
 });
