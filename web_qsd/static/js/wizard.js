@@ -56,25 +56,27 @@ $(document).ready(function(){
             agree_sf:{
                 required:true,
             },
-			password: {
+		password: {
                 required: true,
                 minlength: 6,
                 maxlength: 20,
                 checkPassword:true,
             },
-			user_type: {
-				required: true,
+		user_type: {
+		required: true,
 			},
-			phone_number: {
+		phone_number: {
                 required: true,
                 isPhoneNumber:true,
-				isunRegisted:true,
+		isunRegisted:true,
             },
-			idcard_front: {
+		idcard_front: {
                 required: true,
+		istoolarge_1: true,
             },
-			idcard_back: {
+		idcard_back: {
                 required: true,
+		istoolarge_2: true,
             },
         },
         messages: {
@@ -141,9 +143,11 @@ $(document).ready(function(){
             },
 			idcard_front: {
                 required: "上传照片不能为空",
+		istoolarge_1:"上传图片过大，请上传5MB以下的图片"
             },
 			idcard_back: {
                 required: "上传照片不能为空",
+		istoolarge_2:"上传图片过大，请上传5MB以下的图片"
             },
         }
 	});
