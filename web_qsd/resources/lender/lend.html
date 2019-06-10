@@ -3,7 +3,7 @@
 
 <head>
     <title>借出方>意向借出</title>
-	<link rel="icon" href="/static/images/qsd_logo.ico" sizes="48x48" type="image/x-icon"/>
+	<link rel="icon" href="../../static/images/qsd_logo.ico" sizes="48x48" type="image/x-icon"/>
     <!-- custom-theme -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -18,18 +18,18 @@
         }
     </script>
     <!-- js -->
-    <script type="text/javascript" src="/static/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../../static/js/jquery-2.1.4.min.js"></script>
     <!-- //js -->
-    <script src="/static/js/modernizr-2.6.2.min.js"></script>
+    <script src="../../static/js/modernizr-2.6.2.min.js"></script>
     <!-- //nav -->
-    <script type="text/javascript" src="/static/js/bootstrap-3.1.1.min.js"></script>
-    <script type="text/javascript" src="/static/js/get_my_info.js"></script>
+    <script type="text/javascript" src="../../static/js/bootstrap-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../../static/js/get_my_info.js"></script>
     <!-- //custom-theme -->
-    <link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="/static/css/footer.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="../../static/css/footer.css" rel="stylesheet" type="text/css" media="all" />
     <!-- font-awesome-icons -->
-    <link href="/static/css/font-awesome.css" rel="stylesheet">
+    <link href="../../static/css/font-awesome.css" rel="stylesheet">
     <!-- //font-awesome-icons -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
@@ -48,17 +48,17 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-				<h1><a class="navbar-brand" href="/resources/lender/index_lender"> <i class="fa fa-tree"></i> 青松贷</a></h1>
+				<h1><a class="navbar-brand" href="index_lender.html"> <i class="fa fa-tree"></i> 青松贷</a></h1>
 
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 					<nav class="link-effect-2" id="link-effect-2">
 						<ul class="nav navbar-nav">
-							<li><a href="/resources/lender/index_lender" class="effect-3">首页</a></li>
-							<li><a href="/resources/lender/business_intro" class="effect-3">业务简介</a></li>
-							<li class="active"><a href="/resources/lender/lend" class="effect-3">我要借出</a></li>
-							<li><a href="/resources/lender/fund_account" class="effect-3">个人中心</a></li>
+							<li><a href="index_lender.html" class="effect-3">首页</a></li>
+							<li><a href="business_intro.html" class="effect-3">业务简介</a></li>
+							<li class="active"><a href="lend.html" class="effect-3">我要借出</a></li>
+							<li><a href="fund_account.html" class="effect-3">个人中心</a></li>
 						</ul>
 						</ul>
 					</nav>
@@ -135,29 +135,10 @@
                                                document.getElementById("outputmoney").innerText = money + "元" ;
                                            }
                                         });
-                                        /*
-                                        function(){
-                                            var enddate = new Date($("#returndate").val());
-                                            endmonth = enddate.getMonth() + 1;
-                                            endyear = enddate.getFullYear() * 12;
-                                            endtime = parseInt(endmonth) + parseInt(endyear) ;
-    
-                                            $("#output").text(endtime);
-                                        }
-                                    );*/
                                     </script>
                                 </div>
                             </div>
-
-                            <!--预期利率
-
-                            <div class="styled-input agile-styled-input-top">
-                                <input type="text" name="expect_rate" required="">
-                                <label><span>预期利率</span></label>
-                                <span></span>
-                            </div>
-                             -->
-                            <br>
+                            </br>
                             <div>
                                 <br>
                                 <label style="padding: 15px 10px 10px 0px"><span>选择月利率</span></label>
@@ -204,27 +185,11 @@
 
                             </div>
                             <br>
-                            <!--
-                              <label><span>还款日期</span></label>
-                              <div class="styled-input ">
-                                  <input type="text" id = "date" name ="exact_date" required="" >
-                                  <script src="laydate/laydate.js"></script>
-                                  <script>
-                                      laydate.render({
-                                          elem: '#test1'//指定元素,
-                                          ,btns: ['confirm']
-                                          ,theme: '#393D49'
-                                          ,type: 'month'
-                                          ,min: 0
-                                          ,max: 1010
-                                      });
-                                  </script>
-                            -->
                             <div style="'height: 60px;">
                                 <label><span>还款日期</span></label>
                                 <div class="styled-input ">
                                     <input type="text"  id="returndate" name="exact_date" required="" style="padding: 0px" >
-                                    <script src="/static/js/laydate/laydate.js"></script>
+                                    <script src="../../static/js/laydate/laydate.js"></script>
                                     <script>
                                         //执行一个laydate实例
                                         laydate.render({
@@ -267,7 +232,7 @@
                                 </div>
                             </div>
                             <br>
-                            <a href="/resources/lender/lend_match">
+                            <a href="lend_match.html">
                             <input type="submit" value="SEND" class="text-center" style="margin-left: 200px;"  onclick="my_month();my_rate();my_money()">
                             </a>
                         </div>
@@ -310,149 +275,13 @@
                              </div>
                             </div>
 
-                            <script>
-                                //$("#returndate").change()
-                                    /*
-                                    function(){
-                                        var enddate = new Date($("#returndate").val());
-                                        endmonth = enddate.getMonth() + 1;
-                                        endyear = enddate.getFullYear() * 12;
-                                        endtime = parseInt(endmonth) + parseInt(endyear) ;
-
-                                        $("#output").text(endtime);
-                                    }
-                                );*/
-                            </script>
-                            <script>
-                               // document.getElementById("demo").value = "愿君奉归去来兮";
-                               //$("#demo").text("7777");
-                               /*
-                               $("select#status").change(function(){
-                                   var startdate = new Date() ;
-                                   startyear = startdate.getFullYear();
-                                   startmonth = startdate.getMonth() ;
-                                   document.getElementById("h").innerHTML = "222" ;
-                               });*/
-                               /*
-                               function getnowadaysMonth(){
-                               //获取当前时间
-                               var startdate = new Date() ;
-                               startmonth = startdate.getMonth() + 1;
-                               startyear = startdate.getFullYear()*12;
-                               starttime = parseInt(startmonth) + parseInt(startyear);
-                               return starttime;
-                               }
-                               //选择框里的时间
-                                $("#returndate").change(
-                                    function(){
-                                        var enddate = new Date($("#returndate").val());
-                                        endmonth = enddate.getMonth() + 1;
-                                        endyear = enddate.getFullYear() * 12;
-                                        endtime = parseInt(endmonth) + parseInt(endyear) ;
-
-                                        //时间差
-                                        subtime = endtime - getnowadaysMonth();
-                                        $("#output").text(subtime);
-                                    }
-                                );
-                                */
-
-                            </script>
-                            <script>
-                                //document.getElementById("output").innerText = "2333";
-                                //$("#output").val("2333");
-                                /*$(document).ready(function(){
-                                    $("#output").text("23333");
-                                        //$("#test1").text("Hello world!");
-                                    });*/
-                                /*
-                                $(document).ready(function() {
-                                    $("#btn666").click(function () {
-                                        $("#output").text("Hello world!");
-                                    });
-                                });
-                                */
-                                //$("#returndate").change(
-                                   // $(function(){
-
-                                    //})
-                                //);
-                            </script>
 
                         </div>
-                        <!--<script>
-
-
-                            function sum(obj) {
-                                var date = new Date(doucument.getElementById("date"));
-                                var result,year,month,day;
-                                year = date.getYear() + 1900;
-                                month = date.getMonth() + 1;
-                                day = date.getDate();
-
-                                var rate = doucument.getElementById("rate");
-                                var lend = doucument.getElementById("lend_money");
-                                all.value=parseInt(z.value);
-                                if(a.value!='')
-                                {
-                                    y.value=parseInt(a.value);
-                                    h.value=parseInt(z.value)-parseInt(a.value);
-                                }
-                                if(a.value!=''&&b.value!='')
-                                {
-                                    y.value=parseInt(b.value)+parseInt(a.value);
-                                    h.value=parseInt(z.value)-parseInt(a.value)-parseInt(b.value);
-                                }
-                                if(a.value!=''&&b.value!=''&&c.value!='')
-                                {
-                                    y.value=parseInt(b.value)+parseInt(a.value)+parseInt(c.value);
-                                    h.value=parseInt(z.value)-parseInt(a.value)-parseInt(b.value)-parseInt(c.value);
-                                }
-                            }
-
-                        </script>-->
                 </form>
             </div>
         </div>
     </div>
 </div>
-<!--
-<div class="styled-input textarea-grid">
-<textarea name="Message" required=""></textarea>
-<label>Message</label>
-<span></span>
-</div>
--->
-
-<!--<div class="clearfix"> </div>-->
-
-<!-- //mail -->
-<!-- /map -->
-<!--<div class="bg-dark">
-    <h2>money</h2>
-</div>-->
-<!--
-<div class="banner-bottom inner">
-    <div class="container">
-        <div class="row">-->
-            <!--<h3 class="w3l_header w3_agileits_header"><span>预计收益金额</span></h3>
-            <h3>
-                预计收益金额
-            </h3>
-            <div class="col-md-4" >
-                我在左边
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-
-</div>
--->
-<!-- //map -->
-
 <!-- footer -->
 	<div class="footer">
 		<div class="f-bg-w3l">
@@ -470,19 +299,19 @@
 				<div class="col-md-4 w3layouts_footer_grid">
 					<h3>扫码 <span>关注</span></h3>
 					 <ul class="con_inner_text midimg">
-						<li><a><img id="logo-1" src="/static/images/index_images/pic1.jpg" alt="" class="img-responsive" /></a><p class="p-1">官方QQ群</p></li>
+						<li><a><img id="logo-1" src="../../static/images/index_images/pic1.jpg" alt="" class="img-responsive" /></a><p class="p-1">官方QQ群</p></li>
 					    <li><a><img  alt="" class="img-responsive" /></a></li>
-						<li><a><img  id="logo-2" src="/static/images/index_images/pic1.jpg" alt="" class="img-responsive" /></a><p class="p-2">微信公众号</p></li>
+						<li><a><img  id="logo-2" src="../../static/images/index_images/pic1.jpg" alt="" class="img-responsive" /></a><p class="p-2">微信公众号</p></li>
 				     </ul>
 					
 				</div>
 				<div class="col-md-2 w3layouts_footer_grid">
 					<h3>网站 <span>链接</span> </h3>
 					  <ul class="links">
-							<li><a id="footer-link-1" href="/resources/lender/index_lender">首页</a></li>
-							<li><a id="footer-link-2" href="/resources/lender/business_intro">业务简介</a></li>
-							<li><a id="footer-link-4" href="/resources/lender/lend">我要借出</a></li>
-							<li><a id="footer-link-6" href="/resources/lender/fund_account">个人中心</a></li>
+							<li><a id="footer-link-1" href="index_lender.html">首页</a></li>
+							<li><a id="footer-link-2" href="business_intro.html">业务简介</a></li>
+							<li><a id="footer-link-4" href="lend.html">我要借出</a></li>
+							<li><a id="footer-link-6" href="fund_account.html">个人中心</a></li>
 						</ul>
 				</div>
 				<div class="col-md-3 w3layouts_footer_grid">
@@ -506,13 +335,7 @@
 	<!-- //footer -->
 	
 <!-- //js for index footer -->
-<script src="/static/js/footer.js"></script>
-
-
-
+<script src="../../static/js/footer.js"></script>
 </body>
-
-
-
 </html>
 
