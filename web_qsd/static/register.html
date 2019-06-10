@@ -107,9 +107,13 @@
                                         <h4 class="info-text"> 绑定银行卡和开通三方存管账户 </h4>
                                     </div>
                                     <div class="col-sm-6 col-sm-offset-3">
+                                         <div class="form-group col-md-12">
+                                            <label>持卡人姓名</label>&nbsp;&nbsp;
+                                            <label id="bk_user_name" style="color: grey;"></label>
+                                        </div>
                                         <div class="form-group col-md-12">
-                                            <label>请输入持卡人姓名</label>
-                                            <input type="text" class="form-control" name="bk_user_name" id="bk_user_name" placeholder="持卡人">
+                                            <label>预留手机号</label>&nbsp;&nbsp;
+                                            <label id="bk_phone_number" style="color: gray;"></label>
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label>请输入银行卡号</label>
@@ -169,8 +173,16 @@
 
 	<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
 	<script src="js/jquery.validate.min.js"></script>
-    <script src="js/addvalidator.js"></script>
-    <script src="js/luhmCheck.js"></script>
+    	<script src="js/addvalidator.js"></script>
+    	<script src="js/luhmCheck.js"></script>
 	<script src="js/type_select.js"></script>
+	<script>
+        $("#user_name").focusout(function ()  {
+            $("#bk_user_name").text($("#user_name").val());
+        });
+        $("#phone_num").focusout(function ()  {
+            $("#bk_phone_number").text($("#phone_num").val());
+        });
+    </script>
 
 </html>
