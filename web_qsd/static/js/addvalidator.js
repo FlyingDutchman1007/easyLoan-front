@@ -256,7 +256,8 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $("#btn_register").click(function () {
-        $.ajax({
+    if($("#bank_number").val() != "" && isBankCardNo($("#bank_number").val()) && $("#bk_yzm").val().length == 6 && $('#agree_sf').is(':checked')) {
+	$.ajax({
         type: "POST",
         url: "/information/all/register",
         contentType: "application/json; charset=utf-8",
@@ -280,6 +281,7 @@ $(document).ready(function () {
             alert("注册失败，请重新注册！");
         }
 		})
+	    }
     })
 });
 
