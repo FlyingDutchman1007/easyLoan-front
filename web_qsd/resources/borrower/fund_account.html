@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8"/>
-	<link rel="icon" href="/static/images/qsd_logo.ico" sizes="48x48" type="image/x-icon"/>
+	<link rel="icon" href="../../static/images/qsd_logo.ico" sizes="48x48" type="image/x-icon"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>
         借入方>个人中心>资金账户
@@ -15,12 +15,12 @@
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
-    <link href="/static/assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet"/>
+    <link href="../../static/assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet"/>
 </head>
 
 <body class="">
 <div class="wrapper ">
-    <div class="sidebar" data-color="green" data-background-color="white" data-image="/static/assets/img/sidebar-1.jpg">
+    <div class="sidebar" data-color="green" data-background-color="white" data-image="../../static/assets/img/sidebar-1.jpg">
         <!--
           Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -28,7 +28,7 @@
       -->
         <div class="logo">
 			 
-            <a href="/resources/borrower/index_borrower" class="simple-text logo-normal">
+            <a href="index_borrower.html" class="simple-text logo-normal">
                 <i class="fa fa-tree" style="color:#1cd8c9;"></i>
 				青松贷
             </a>
@@ -36,37 +36,37 @@
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/resources/borrower/fund_account">
+                    <a class="nav-link" href="fund_account.html">
                         <i class="material-icons">attach_money</i>
                         <p>资金账户</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/resources/borrower/user_info">
+                    <a class="nav-link" href="user_info.html">
                         <i class="material-icons">person</i>
                         <p>个人信息</p>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="/resources/borrower/special_certification">
+                    <a class="nav-link" href="special_certification.html">
                         <i class="material-icons">library_books</i>
                         <p>特殊认证</p>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="/resources/borrower/unfinished_funds_record">
+                    <a class="nav-link" href="unfinished_funds_record.html">
                         <i class="material-icons">event_note</i>
                         <p>待交易</p>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="/resources/borrower/repayment_record">
+                    <a class="nav-link" href="repayment_record.html">
                         <i class="material-icons">event_busy</i>
                         <p>待还款</p>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="/resources/borrower/finished_funds_record">
+                    <a class="nav-link" href="finished_funds_record.html">
                         <i class="material-icons">event_available</i>
                         <p>已完成</p>
                     </a>
@@ -107,7 +107,7 @@
                 </a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">notifications</i>
                   <span class="notification">5</span>
                   <p class="d-lg-none d-md-block">
@@ -148,7 +148,7 @@
                         <div class="card card-profile">
                             <div class="card-avatar">
                                 <a href="#">
-                                    <img id="avatar" class="img" src="/information/all/avatar"/>
+                                    <img id="avatar" class="img" src="#"/>
                                 </a>
                             </div>
                             <div class="card-body">
@@ -268,27 +268,14 @@
 </div>
 	
 <!--   Core JS Files   -->
-<script src="/static/assets/js/core/jquery.min.js"></script>
-<script src="/static/assets/js/core/popper.min.js"></script>
-<script src="/static/assets/js/core/bootstrap-material-design.min.js"></script>
-<script src="/static/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-<!-- Chartist JS -->
-<script src="/static/assets/js/plugins/chartist.min.js"></script>
-<!--  Notifications Plugin    -->
-<script src="/static/assets/js/plugins/bootstrap-notify.js"></script>
-<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="/static/assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
-<script>
-    $(document).ready(function () {
-        // Javascript method's body can be found in assets/js/demos.js
-        demo.initGoogleMaps();
-    });
-</script>
-<script src="/static/assets/js/fund_account_br.js"></script>
-<script src="/static/js/borrower_deposit.js"></script>
-<script src="/static/js/borrower_withdraw.js"></script>
-<script src="/static/js/deposit_judge.js"></script>
-<script src="/static/js/withdraw_judge.js"></script>
+<script src="../../static/assets/js/core/jquery.min.js"></script>
+<script src="../../static/assets/js/core/popper.min.js"></script>
+<script src="../../static/assets/js/core/bootstrap-material-design.min.js"></script>
+<script src="../../static/assets/js/fund_account_br.js"></script>
+<script src="../../static/js/borrower_deposit.js"></script>
+<script src="../../static/js/borrower_withdraw.js"></script>
+<script src="../../static/js/deposit_judge.js"></script>
+<script src="../../static/js/withdraw_judge.js"></script>
 </body>
 
 </html>
