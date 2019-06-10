@@ -127,6 +127,9 @@ $(document).ready(function(){
                 minlength:"请输入六验证码",
                 maxlength:"请输入六位验证码",
             },
+	     agree_sf:{
+                required:"请点击确认",
+            },
             password: {
                 required: "密码不能为空",
                 minlength: "密码长度不能少于6个字符",
