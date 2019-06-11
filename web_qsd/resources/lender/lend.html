@@ -39,7 +39,6 @@
 <!-- banner -->
 	<div class="main_section_agile inner" id="home">
 		<div class="agileits_w3layouts_banner_nav">
-
 			<nav class="navbar navbar-default">
 				<div class="navbar-header navbar-left">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -49,7 +48,6 @@
 						<span class="icon-bar"></span>
 					</button>
 				<h1><a class="navbar-brand" href="index_lender.html"> <i class="fa fa-tree"></i> 青松贷</a></h1>
-
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
@@ -81,61 +79,15 @@
                 <div class="wthree_head_section">
                     <h3 class="w3l_header w3_agileits_header">信息填写 </h3>
                 </div>
-
                 <!--表单-->
-                <form action="#" method="post" enctype="multipart/form-data">
                     <div class="fields-grid">
                         <div class="col-md-6">
                             <div style="height:60px">
-                                <label><span>借出金额</span>0~1000000</label>
+                                <label><span>借出金额</span></label>
                                 <div class="styled-input agile-styled-input-top">
                                     <!--lend_money-->
-                                    <input type ="text" name ="lend_money" required="" data-toggle="tooltip" data-placement="top" id="lend_money" placeholder="必须为100的整数倍">
-
-
+                                    <input type ="text" name ="lend_money" required="" data-toggle="tooltip" data-placement="top" id="lend_money" placeholder="金额限制0~100000，必须为100的整数倍">
                                     <span></span>
-                                    <script>
-                                        $(function () {
-                                            $("#lend_money").click(function () {
-                                                $("[data-toggle='tooltip']").tooltip();
-                                            });
-                                        });
-                                    </script>
-                                
-                                    <script>
-                                        $("#lend_money").change(function(){
-										   var money = document.getElementById("lend_money");
-                                            this.value=this.value.replace(/\D/g,'');
-                                            if(money.value > 100000 || money.value < 0 || money.value % 100 != 0){
-                                                money.value = null;
-												$("#outputmoney").text("---元");
-                                            }                  
-											if($("#lend_money").val()=="" && $("#returndate").val() != "" && $("#rate").val()!="")
-                                               //document.getElementById("outputmoney").innerText =0 ;
-                                               $("#outputmoney").text("---元");
-											if($("#lend_money").val()=="")
-                                               //document.getElementById("outputmoney").innerText =0 ;
-                                               $("#outputmoney").text("---元");
-                                           if ($("#returndate").val() != "" && $("#rate").val()!=""&&$("#lend_money").val()!=""){
-
-                                               var enddate = new Date($("#returndate").val());
-                                               endmonth = enddate.getMonth() + 1;
-                                               endyear = enddate.getFullYear() * 12;
-                                               endtime = parseInt(endmonth) + parseInt(endyear) ;
-
-                                               var startdate = new Date() ;
-                                               startmonth = startdate.getMonth() + 1;
-                                               startyear = startdate.getFullYear()*12;
-                                               starttime = parseInt(startmonth) + parseInt(startyear);
-
-                                               subtime = endtime - starttime ;
-                                               document.getElementById("outputtime").innerText = subtime + "月" ;
-
-                                               money = parseInt($("#lend_money").val()) * ( parseInt($("#rate").val())/100 ) * subtime + parseInt($("#lend_money").val());
-                                               document.getElementById("outputmoney").innerText = money + "元" ;
-                                           }
-                                        });
-                                    </script>
                                 </div>
                             </div>
                             </br>
@@ -160,75 +112,12 @@
                                         -->
                                     </select>
                                 </div>
-                                <script>
-                                    $("#rate").change(function(){
-                                        if ($("#returndate").val() != "" && $("#lend_money").val()!=""){
-
-                                            var enddate = new Date($("#returndate").val());
-                                            endmonth = enddate.getMonth() + 1;
-                                            endyear = enddate.getFullYear() * 12;
-                                            endtime = parseInt(endmonth) + parseInt(endyear) ;
-
-                                            var startdate = new Date() ;
-                                            startmonth = startdate.getMonth() + 1;
-                                            startyear = startdate.getFullYear()*12;
-                                            starttime = parseInt(startmonth) + parseInt(startyear);
-
-                                            subtime = endtime - starttime ;
-                                            document.getElementById("outputtime").innerText = subtime + "月" ;
-
-                                            money = parseInt($("#lend_money").val()) * ( parseInt($("#rate").val())/100 ) * subtime + parseInt($("#lend_money").val());
-                                            document.getElementById("outputmoney").innerText = money + "元" ;
-                                        }
-                                    });
-                                </script>
-
                             </div>
                             <br>
                             <div style="'height: 60px;">
-                                <label><span>还款日期</span></label>
+                                <label><span>借款期限</span></label>
                                 <div class="styled-input ">
                                     <input type="text"  id="returndate" name="exact_date" required="" style="padding: 0px" >
-                                    <script src="../../static/js/laydate/laydate.js"></script>
-                                    <script>
-                                        //执行一个laydate实例
-                                        laydate.render({
-                                            elem: '#returndate'//指定元素,
-                                            ,btns: ['confirm']
-                                            ,theme: '#393D49'
-                                            ,type: 'month'
-                                            ,min: 0
-                                            ,max: 1010
-                                            ,done: function(value, date, endDate){
-                                                //console.log(value); //得到日期生成的值，如：2017-08-18
-                                                //console.log(date); //得到日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
-                                                //console.log(endDate); //得结束的日期时间对象，开启范围选择（range: true）才会返回。对象成员同上。
-
-                                                //选择框里的时间
-                                                var enddate = new Date(value);
-                                                endmonth = enddate.getMonth() + 1;
-                                                endyear = enddate.getFullYear() * 12;
-                                                endtime = parseInt(endmonth) + parseInt(endyear) ;
-
-                                                //获取当前时间
-                                                var startdate = new Date() ;
-                                                startmonth = startdate.getMonth() + 1;
-                                                startyear = startdate.getFullYear()*12;
-                                                starttime = parseInt(startmonth) + parseInt(startyear);
-
-                                                console.log($("#lend_money").val());
-                                                console.log(parseInt($("#rate").val())/100 + 1 );
-
-                                                //显示时间差
-                                                subtime = endtime - starttime ;
-                                                document.getElementById("outputtime").innerText = subtime + "月" ;
-
-                                                //预计收益金额
-                                                money = parseInt($("#lend_money").val()) * ( parseInt($("#rate").val())/100 ) * subtime + parseInt($("#lend_money").val());
-                                                document.getElementById("outputmoney").innerText = money + "元" ;
-                                            }
-                                        });
-                                    </script>
                                 </div>
                             </div>
                             <br>
@@ -236,30 +125,7 @@
                             <input type="submit" value="SEND" class="text-center" style="margin-left: 200px;"  onclick="my_month();my_rate();my_money()">
                             </a>
                         </div>
-
-                        <!--
-                        <label><span>还款日期</span></label>
-                        <div class="styled-input ">
-                            <input type="text"  id="test1" name="exact_date" required="">
-                        <script src="laydate/laydate.js"></script>
-                        <script>
-                         //执行一个laydate实例
-                           laydate.render({
-                               elem: '#test1'//指定元素,
-                               ,btns: ['confirm']
-                               ,theme: '#393D49'
-                               ,type: 'month'
-                               ,min: 0
-                               ,max: 1010
-                           });
-                         </script>
-                     </div>
-                     -->
-                        <!-- <div class="clearfix"> </div>
-                     </div>-->
-
                         <div class="col-md-6 text-center ">
-                          
                             <div class="row" style="padding: 20px 0px 50px 0px">
                                 <br>
                                 <div class="col-md-6 text-right text-primary"><h4><small>借款月数:</small></h4></div>
@@ -274,10 +140,7 @@
                                     </div>
                              </div>
                             </div>
-
-
                         </div>
-                </form>
             </div>
         </div>
     </div>
@@ -293,8 +156,6 @@
 						<button class="btn1"><i class="fa fa-envelope-o" aria-hidden="true"></i></button>
 						<div class="clearfix"> </div>
 					</form>
-					
-				
 				</div>
 				<div class="col-md-4 w3layouts_footer_grid">
 					<h3>扫码 <span>关注</span></h3>
@@ -303,7 +164,6 @@
 					    <li><a><img  alt="" class="img-responsive" /></a></li>
 						<li><a><img  id="logo-2" src="../../static/images/index_images/pic1.jpg" alt="" class="img-responsive" /></a><p class="p-2">微信公众号</p></li>
 				     </ul>
-					
 				</div>
 				<div class="col-md-2 w3layouts_footer_grid">
 					<h3>网站 <span>链接</span> </h3>
@@ -321,7 +181,6 @@
 							<li><span id="logo-4"class="fa fa-envelope-o" aria-hidden="true"></span> <a><a  id="mail" href="mailto:1048737310@qq.com">1048737310@qq.com</a></a></li>
 							<li><span id="logo-5" class="fa fa-phone" aria-hidden="true"></span><a id="phone"> +86 18640372196</a></li>
 						</ul>
-
 					<ul class="social_agileinfo">
 						<li><a href="#" class="w3_facebook"><i class="fa fa-qq"></i></a></li>
 						<li><a href="#" class="w3_twitter"><i class="fa fa-wechat"></i></a></li>
@@ -336,6 +195,113 @@
 	
 <!-- //js for index footer -->
 <script src="../../static/js/footer.js"></script>
+<script>
+    $(function () {
+        $("#lend_money").click(function () {
+            $("[data-toggle='tooltip']").tooltip();
+        });
+    });
+</script>
+
+<script>
+    $("#lend_money").change(function(){
+        var money = document.getElementById("lend_money");
+        this.value=this.value.replace(/\D/g,'');
+        if(money.value > 100000 || money.value < 0 || money.value % 100 != 0){
+            money.value = null;
+            $("#outputmoney").text("---元");
+        }
+        if($("#lend_money").val()=="" && $("#returndate").val() != "" && $("#rate").val()!="")
+        //document.getElementById("outputmoney").innerText =0 ;
+            $("#outputmoney").text("---元");
+        if($("#lend_money").val()=="")
+        //document.getElementById("outputmoney").innerText =0 ;
+            $("#outputmoney").text("---元");
+        if ($("#returndate").val() != "" && $("#rate").val()!=""&&$("#lend_money").val()!=""){
+
+            var enddate = new Date($("#returndate").val());
+            endmonth = enddate.getMonth() + 1;
+            endyear = enddate.getFullYear() * 12;
+            endtime = parseInt(endmonth) + parseInt(endyear) ;
+
+            var startdate = new Date() ;
+            startmonth = startdate.getMonth() + 1;
+            startyear = startdate.getFullYear()*12;
+            starttime = parseInt(startmonth) + parseInt(startyear);
+
+            subtime = endtime - starttime ;
+            document.getElementById("outputtime").innerText = subtime + "月" ;
+
+            money = parseInt($("#lend_money").val()) * ( parseInt($("#rate").val())/100 ) * subtime + parseInt($("#lend_money").val());
+            document.getElementById("outputmoney").innerText = money + "元" ;
+        }
+    });
+</script>
+
+<script>
+    $("#rate").change(function(){
+        if ($("#returndate").val() != "" && $("#lend_money").val()!=""){
+
+            var enddate = new Date($("#returndate").val());
+            endmonth = enddate.getMonth() + 1;
+            endyear = enddate.getFullYear() * 12;
+            endtime = parseInt(endmonth) + parseInt(endyear) ;
+
+            var startdate = new Date() ;
+            startmonth = startdate.getMonth() + 1;
+            startyear = startdate.getFullYear()*12;
+            starttime = parseInt(startmonth) + parseInt(startyear);
+
+            subtime = endtime - starttime ;
+            document.getElementById("outputtime").innerText = subtime + "月" ;
+
+            money = parseInt($("#lend_money").val()) * ( parseInt($("#rate").val())/100 ) * subtime + parseInt($("#lend_money").val());
+            document.getElementById("outputmoney").innerText = money + "元" ;
+        }
+    });
+</script>
+
+<script src="../../static/js/laydate/laydate.js"></script>
+<script>
+    //执行一个laydate实例
+    laydate.render({
+        elem: '#returndate'//指定元素,
+        ,btns: ['confirm']
+        ,theme: '#393D49'
+        ,type: 'month'
+        ,min: 0
+        ,max: 1010
+        ,done: function(value, date, endDate){
+            //console.log(value); //得到日期生成的值，如：2017-08-18
+            //console.log(date); //得到日期时间对象：{year: 2017, month: 8, date: 18, hours: 0, minutes: 0, seconds: 0}
+            //console.log(endDate); //得结束的日期时间对象，开启范围选择（range: true）才会返回。对象成员同上。
+
+            //选择框里的时间
+            var enddate = new Date(value);
+            endmonth = enddate.getMonth() + 1;
+            endyear = enddate.getFullYear() * 12;
+            endtime = parseInt(endmonth) + parseInt(endyear) ;
+
+            //获取当前时间
+            var startdate = new Date() ;
+            startmonth = startdate.getMonth() + 1;
+            startyear = startdate.getFullYear()*12;
+            starttime = parseInt(startmonth) + parseInt(startyear);
+
+            console.log($("#lend_money").val());
+            console.log(parseInt($("#rate").val())/100 + 1 );
+
+            //显示时间差
+            subtime = endtime - starttime ;
+            document.getElementById("outputtime").innerText = subtime + "月" ;
+
+            //预计收益金额
+            money = parseInt($("#lend_money").val()) * ( parseInt($("#rate").val())/100 ) * subtime + parseInt($("#lend_money").val());
+            document.getElementById("outputmoney").innerText = money + "元" ;
+        }
+    });
+</script>
+
 </body>
 </html>
 
