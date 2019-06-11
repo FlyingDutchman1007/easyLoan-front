@@ -1,7 +1,9 @@
 	    $("#login_btn").click(function () {
             var phone_number = $("#phone_number").val();
             var res = false;
-	       if(phone_number.length ==11 && /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(phone_number)) {
+   	    if(phone_number.length ==11 && 
+               /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(phone_number) &&
+               /^(?=.*[0-9])(?=.*[a-zA-Z])(.{6,20})$/.test(password)) {
                $.ajax({
                    type: "POST",
                    url: "/information/all/checkPhoneNumber",
