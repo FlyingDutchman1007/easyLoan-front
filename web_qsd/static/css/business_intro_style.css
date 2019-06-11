@@ -853,7 +853,15 @@ ul#slider li:nth-child(4) {
     padding: 7em 0;
 }
 
-#welcome {
+#welcome_1 {
+    background: #0b0c11;
+    padding: 7em 0;
+}
+#welcome_2 {
+    background: #0b0c11;
+    padding: 7em 0;
+}
+#welcome_3 {
     background: #0b0c11;
     padding: 7em 0;
 }
@@ -3651,7 +3659,13 @@ span.simply-word {
     .agile_wthree_inner_grids {
         margin-top: 2em;
     }
-    #welcome {
+    #welcome_1 {
+        padding: 3em 0;
+    }
+	  #welcome_2 {
+        padding: 3em 0;
+    }
+	  #welcome_3 {
         padding: 3em 0;
     }
     .medile_agile_its_blue h4 {
@@ -4009,7 +4023,13 @@ span.simply-word {
     .plans-section {
         padding: 2.5em 0;
     }
-    #welcome {
+    #welcome_1 {
+        padding: 2em 0;
+    }
+	#welcome_2 {
+        padding: 2em 0;
+    }
+	#welcome_3 {
         padding: 2em 0;
     }
     .test-grid1 {
