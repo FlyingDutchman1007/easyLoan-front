@@ -6,7 +6,7 @@
                /^(?=.*[0-9])(?=.*[a-zA-Z])(.{6,20})$/.test(password)) {
                $.ajax({
                    type: "POST",
-                   url: "localhost:8080/user/register/checkPhoneNumber",
+                   url: "192.168.40.1:8080/user/register/checkPhoneNumber",
                    contentType: "application/json; charset=utf-8",
                    async: false,
                    data: JSON.stringify({
@@ -27,7 +27,7 @@
                if (res == true) {
                    $.ajax({
                        type: "POST",
-                       url: "localhost:8080/user/login",
+                       url: "192.168.40.1:8080/user/login",
                        contentType: "application/json; charset=utf-8",
                        data: JSON.stringify({
                            "phoneNumber": $("#phone_number").val(),
