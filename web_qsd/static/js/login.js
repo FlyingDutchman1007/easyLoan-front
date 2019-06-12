@@ -10,7 +10,7 @@
                    contentType: "application/json; charset=utf-8",
                    async: false,
                    data: JSON.stringify({
-                       "phone_number": phone_number
+                       "phoneNumber": phone_number
                    }),
                    dataType: "json",
                    success: function (message) {
@@ -30,7 +30,7 @@
                        url: "localhost:8080/user/login",
                        contentType: "application/json; charset=utf-8",
                        data: JSON.stringify({
-                           "phone_number": $("#phone_number").val(),
+                           "phoneNumber": $("#phone_number").val(),
                            "password": $("#password").val()
                        }),
                        dataType: "json",
