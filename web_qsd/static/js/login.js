@@ -1,12 +1,13 @@
 	    $("#login_btn").click(function () {
             var phone_number = $("#phone_number").val();
+            var password = $("#password").val();
             var res = false;
-   	    if(phone_number.length ==11 && 
+   	    if(phone_number.length ==11 &&
                /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(phone_number) &&
                /^(?=.*[0-9])(?=.*[a-zA-Z])(.{6,20})$/.test(password)) {
                $.ajax({
                    type: "POST",
-                   url: "192.168.40.1:8080/user/register/checkPhoneNumber",
+                   url: "http://192.168.0.195:8080/user/register/checkPhoneNumber",
                    contentType: "application/json; charset=utf-8",
                    async: false,
                    data: JSON.stringify({
@@ -27,7 +28,7 @@
                if (res == true) {
                    $.ajax({
                        type: "POST",
-                       url: "192.168.40.1:8080/user/login",
+                       url: "http://192.168.0.195:8080/user/login",
                        contentType: "application/json; charset=utf-8",
                        data: JSON.stringify({
                            "phoneNumber": $("#phone_number").val(),
@@ -39,10 +40,10 @@
                            if (message.state != -1) {
                                if (message.state == 0) {
                                    alert("借入者登录成功！");
-                                   location.href = "../../resources/borrower/index_borrower.html";
+                                   location.href = "../resources/borrower/index_borrower.html";
                                } else {
                                    alert("借出者登录成功！");
-                                   location.href = "../../resources/lender/index_lender.html";
+                                   location.href = "../resources/lender/index_lender.html";
                                }
                            }
                            else {

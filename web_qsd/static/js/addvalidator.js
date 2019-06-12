@@ -42,7 +42,7 @@ $.validator.addMethod("isRegisted", function (value, element) {
     if(phone_number.length ==11 && /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(phone_number)) {
         $.ajax({
             type: "POST",
-            url: "192.168.40.1:8080/user/register/checkPhoneNumber",
+            url: "http://192.168.0.195:8080/user/register/checkPhoneNumber",
             contentType: "application/json; charset=utf-8",
 			async: false,
             data: JSON.stringify({
@@ -50,7 +50,7 @@ $.validator.addMethod("isRegisted", function (value, element) {
             }),
             dataType: "json",
             success: function (message) {
-                if (message.state == "unregister") {				
+                if (message.state == "unregister") {
                     $("#btnSendCode").attr("disabled", false);
                     res = true;
                 } else {
@@ -69,12 +69,12 @@ $.validator.addMethod("isRegisted", function (value, element) {
 
 // 登录时手机号是否已注册验证
 $.validator.addMethod("isunRegisted", function (value, element) {
-    var phone_number = $("#phone_num").val();
+    var phone_number = $("#phone_number").val();
     var res = false;
     if(phone_number.length ==11 && /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(phone_number)) {
 		$.ajax({
             type: "POST",
-            url: "192.168.40.1:8080/user/register/checkPhoneNumber",
+            url: "http://192.168.0.195:8080/user/register/checkPhoneNumber",
             contentType: "application/json; charset=utf-8",
 			async: false,
             data: JSON.stringify({
@@ -102,11 +102,11 @@ $.validator.addMethod("isCodeRight", function (value, element) {
 		if(value.length == 6){
 	     $.ajax({
         type: "POST",
-        url: "192.168.40.1:8080/user/register/checkCheckCode",
+        url: "http://192.168.0.195:8080/user/register/checkCheckCode",
         contentType: "application/json; charset=utf-8",
 		async:false,
         data: JSON.stringify({
-            "phone_number": $("#phone_num").val(),
+            "phoneNumber": $("#phone_num").val(),
 			"verifyCode": value
         }),
         dataType: "json",
@@ -189,7 +189,7 @@ $(document).ready(function () {
 		if(phone_number.length ==11 && /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(phone_number)){
 				$.ajax({
 				type: "POST",
-				url: "192.168.40.1:8080/user/register/sendCheckCode",
+				url: "http://192.168.0.195:8080/user/register/sendCheckCode",
 				contentType: "application/json; charset=utf-8",
 				async:false,
 				data: JSON.stringify({
@@ -235,7 +235,7 @@ $(document).ready(function () {
 				$.ajax({
 				type: "POST",
 				async:false,
-				url: "192.168.40.1:8080/user/register/sendCheckCode2",
+				url: "http://192.168.0.195:8080/user/register/sendCheckCode2",
 				contentType: "application/json; charset=utf-8",
 				data: JSON.stringify({
 				"bankAccount": bank_account
@@ -260,7 +260,7 @@ $(document).ready(function () {
     if($("#bank_number").val() != "" && isBankCardNo($("#bank_number").val()) && $("#bk_yzm").val().length == 6 && $('#agree_sf').is(':checked')) {
 	$.ajax({
         type: "POST",
-        url: "192.168.40.1:8080/user/register/subRegister",
+        url: "http://192.168.0.195:8080/user/register/subRegister",
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
             "phoneNumber": $("#phone_num").val(),
