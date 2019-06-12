@@ -2,10 +2,10 @@
 $(document).ready(function () {
     $.ajax({
         type: "GET",
-        url: "borrow_limit.json",
+        url: "http://192.168.0.195:8080/borrowerFund",
         dataType: "json",
         success: function (message) {
-            $("#limit").text(message.limit+"元");
+            $("#limit").text(message.availableLimit+"元");
         },
         error: function () {
             $("#limit").text("---元");
