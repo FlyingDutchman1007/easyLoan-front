@@ -21,8 +21,8 @@
     <link href="../../static/css/footer.css" rel="stylesheet" type="text/css" media="all" />
     <link href="../../static/css/borrow.css" rel="stylesheet" type="text/css">
     <!-- //custom-theme -->
-    <link href="../../static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../../static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../static/css/business_intro_bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../static/css/business_intro_style.css" rel="stylesheet" type="text/css" media="all" />
     <!-- font-awesome-icons -->
     <link href="../../static/css/font-awesome.css" rel="stylesheet">
     <!-- //font-awesome-icons -->
@@ -34,7 +34,6 @@
 	<!-- banner -->
 	<div class="main_section_agile inner" id="home">
 		<div class="agileits_w3layouts_banner_nav">
-
 			<nav class="navbar navbar-default">
 				<div class="navbar-header navbar-left">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -44,7 +43,6 @@
 						<span class="icon-bar"></span>
 					</button>
 				<h1><a class="navbar-brand" href="index_borrower.html"> <i class="fa fa-tree"></i> 青松贷</a></h1>
-
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
@@ -66,39 +64,158 @@
 	
 <!-- /borrow -->
 <div class="banner-bottom inner">
-    <div class="container">
-        <div class="agile_wthree_inner_grids">
-           
-            <div class="contact-form agile_inner_grids">
-                <div class="wthree_head_section">
-                    <h3 class="w3l_header w3_agileits_header">申请 <span>借入 </span></h3>
-                </div>
+	<div class="container">
+		<div class="agile_wthree_inner_grids">
+			<!--  流程 -->
+			<div class="container">
+				<div class="wthree_head_section">
+					<h3 class="w3l_header w3_agileits_header">借入 <span>流程</span></h3>
+				</div>
+				<div class="col-md-2 agileits_banner_bottom_left">
+					<div class="agileinfo_banner_bottom_pos">
+						<div class="w3_agileits_banner_bottom_pos_grid">
+							<div class="col-xs-9 wthree_banner_bottom_grid_right">
+								<div style="margin-top: 3em; margin-left: 1em">
+									<span class="fa fa-file-text fa-5x" aria-hidden="true"></span>
+									<p>提交申请</p>
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-1 wthree_banner_bottom_grid_left">
+					<div style="margin-top: 4em">
+						<span class="fa fa-angle-double-right fa-3x" aria-hidden="true"></span>
+					</div>
+				</div>
+
+				<div class="col-md-2 agileits_banner_bottom_left">
+					<div class="agileinfo_banner_bottom_pos">
+						<div class="w3_agileits_banner_bottom_pos_grid">
+							<div class="col-xs-9 wthree_banner_bottom_grid_right">
+								<div style="margin-top: 3em; margin-left: 1em">
+									<span class="fa fa-clock-o fa-5x" aria-hidden="true"></span>
+									<p>审核资料</p>
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-1 wthree_banner_bottom_grid_left">
+					<div style="margin-top: 4em">
+						<span class="fa fa-angle-double-right fa-3x" aria-hidden="true"></span>
+					</div>
+				</div>
+
+				<div class="col-md-2 agileits_banner_bottom_left">
+					<div class="agileinfo_banner_bottom_pos">
+						<div class="w3_agileits_banner_bottom_pos_grid">
+							<div class="col-xs-9 wthree_banner_bottom_grid_right">
+								<div style="margin-top: 3em; margin-left: 1em">
+									<span class="fa fa-check fa-5x" aria-hidden="true"></span>
+									<p>匹配成功</p>
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-1 wthree_banner_bottom_grid_left">
+					<div style="margin-top: 4em">
+						<span class="fa fa-angle-double-right fa-3x" aria-hidden="true"></span>
+					</div>
+				</div>
+
+				<div class="col-md-2 agileits_banner_bottom_left">
+					<div class="agileinfo_banner_bottom_pos">
+						<div class="w3_agileits_banner_bottom_pos_grid">
+							<div class="col-xs-9 wthree_banner_bottom_grid_right">
+								<div style="margin-top: 3em; margin-left: 1em">
+									<span class="fa fa-usd fa-5x" aria-hidden="true"></span>
+									<p>发放贷款</p>
+									<div class="clearfix"> </div>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			</div>
+			<!-- 流程 -->
+			<div class="contact-form agile_inner_grids">
+				<div class="wthree_head_section">
+					<h3 class="w3l_header w3_agileits_header">信息填写 </h3>
+				</div>
+
                     <div class="fields-grid">
-					   <label>可用额度<span id="limit">--</span>
-					   </br></label>
-                        <div class="styled-input agile-styled-input-top">
-                            <input type="text" name="intend_money" required="" id="intend_money" placeholder="             必须是100的整数倍"/>
-                            <label>金额（￥）</label>
-                            <span></span>
-                        </div>
-                        <div class="styled-input agile-styled-input-top">
-                            <input type="text" name="rate" required="" id="rate" placeholder="             36及以下的数字" />
-                            <label>年利率（%）</label>
-                            <span></span>
-                        </div>
-                        <div class="styled-input">
-                            <input type="text" name="limit_months" required="" id="limit_months" placeholder="             1、2、3、6、12、24或36"/>
-                            <label>期限（月）</label>
-                            <span></span>
-                        </div>
-				<select name="pay_type" id="pay_type">
-					<option value="1">按月付</option>
-					<option value="3">按季度付</option>
-				</select>	
+						<div class="col-md-6">
+							<div style="height:60px">
+								<label><span>借入金额</span></label>
+								<div class="styled-input agile-styled-input-top">
+									<!--intend_money-->
+									<input type ="text" id="intend_money" name ="intend_money" autocomplete="off" placeholder="金额限制0~100000，必须为100的整数倍" oninput="value=value.replace(/[^\d]/g,'')" >
+								</div>
+							</div>
+							<br/>
+							<label style="padding: 15px 10px 10px 0px"><span>选择还款方式</span></label>
+							<div class="form-group">
+								<select class="form-control styled-input " id="pay_type" name="expect_rate" >
+									<option value="1">按月还</option>
+									<option value="3" >按季还</option>
+								</select>
+							</div>
+							<div>
+								<br/>
+								<label style="padding: 15px 10px 10px 0px"><span>选择月利率</span></label>
+								<div class="form-group">
+									<select class="form-control styled-input " id="rate" name="expect_rate" >
+										<option value="0.5">0.50%</option>
+										<option value="1" >1.00%</option>
+										<option value="1.5">1.50%</option>
+                                        <option value="2">2.00%</option>
+                                        <option value="2.5">2.50%</option>
+                                        <option value="3">3.00%</option>
+									</select>
+								</div>
+							</div>
+							<br/>
+							<div style="'height: 60px;">
+								<label><span>借款期限</span></label>
+								<div class="styled-input">
+									<input type="text"  id="limit_months" name="limit_months" autocomplete="off" style="padding: 0px" placeholder="选择按季还款时，月数必须是3的倍数">
+								</div>
+							</div>
+							<br>
+								<input id="btn_submit" type="submit" value="提交借入" class="text-center" style="margin-left: 200px;" >
+						</div>
+						<div class="col-md-6 text-center ">
+							<div class="row">
+								<div class="col-md-6 text-right text-success"><h4><small>信用额度:</small></h4></div>
+								<div class="col-md-6">
+									<h3 id="limit">--元</h3>
+								</div>
+							</div>
+							<div class="row" style="padding: 20px 0px 50px 0px">
+								<br>
+								<div class="col-md-6 text-right text-primary"><h4><small>借款月数:</small></h4></div>
+								<div class="col-md-6">
+									<h3 id="outputtime" >--月</h3>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6 text-right text-success"><h4><small>预期还款:</small></h4></div>
+								<div class="col-md-6">
+									<h3 id="outputmoney">--元</h3>
+								</div>
+							</div>
+						</div>
 				<div class="checkbox-model"></div>
                     </div>
-
-                    <button type="buttton" class="btn btn-success" id="btn_submit">提交借入申请</button>
             </div>
             <div class="clearfix"> </div>
         </div>
@@ -117,8 +234,6 @@
 						<button class="btn1"><i class="fa fa-envelope-o" aria-hidden="true"></i></button>
 						<div class="clearfix"> </div>
 					</form>
-					
-				
 				</div>
 				<div class="col-md-4 w3layouts_footer_grid">
 					<h3>扫码 <span>关注</span></h3>
@@ -127,7 +242,6 @@
 					    <li><a><img  alt="" class="img-responsive" /></a></li>
 						<li><a><img  id="logo-2" src="../../static/images/index_images/pic1.jpg" alt="" class="img-responsive" /></a><p class="p-2">微信公众号</p></li>
 				     </ul>
-					
 				</div>
 				<div class="col-md-2 w3layouts_footer_grid">
 					<h3>网站 <span>链接</span> </h3>
@@ -142,10 +256,9 @@
 					<h2>联系 <span>我们</span></h2>
 					    <ul class="con_inner_text">
 							<li><span id="logo-3" class="fa fa-map-marker" aria-hidden="true"></span><a id="address">辽宁省沈阳市浑南区创新路195号<label>东北大学(浑南校区)</label></a></li>
-							<li><span id="logo-4"class="fa fa-envelope-o" aria-hidden="true"></span> <a><a  id="mail" href="mailto:1048737310@qq.com">1048737310@qq.com</a></a></li>
+							<li><span id="logo-4" class="fa fa-envelope-o" aria-hidden="true"></span> <a><a  id="mail" href="mailto:1048737310@qq.com">1048737310@qq.com</a></a></li>
 							<li><span id="logo-5" class="fa fa-phone" aria-hidden="true"></span><a id="phone"> +86 18640372196</a></li>
 						</ul>
-
 					<ul class="social_agileinfo">
 						<li><a href="#" class="w3_facebook"><i class="fa fa-qq"></i></a></li>
 						<li><a href="#" class="w3_twitter"><i class="fa fa-wechat"></i></a></li>
@@ -157,60 +270,17 @@
 			</div>
 	</div>
 	<!-- //footer -->
-	
 
-<!-- js -->
-<script type="text/javascript" src="../../static/js/jquery-2.2.4.min.js"></script>
-<!-- //js -->
-<script src="../../static/js/modernizr-2.6.2.min.js"></script>
-<!-- //nav -->
-<script type="text/javascript" src="../../static/js/bootstrap-3.1.1.min.js"></script>
-<script>
-$(document).ready(function () {
-        $.ajax({
-        type: "GET",
-        url: "/trade/borrower/limit",
-        dataType: "json",
-        success: function (message) {
-           	$("#limit").text(message.limit);
-        },
-        error: function () {
-		$("#limit").text("---");
-        }
-	})
-});
-
-$("#btn_submit").click(function(){
-	$.ajax({
-        type: "POST",
-        url: "/trade/borrower/loan",
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({
-            "intend_money": $("#intend_money").val(),
-            "rate": $("#rate").val(),
-            "pay_type": $('#pay_type').val(),
-            "limit_months": $("#limit_months").val(),
-        }),
-        dataType: "json",
-        success: function (message) {
-            if (message.state == "successful" ) {
-                alert("提交成功");
-		location.href = "/resources/borrower/borrow";
-            }else{
-		alert("借款额度不足");
-		//location.href = "/resources/borrower/borrow";        
-		}
-        },
-        error: function () {
-            alert("提交失败，请稍后再试~");
-	    //location.href = "/resources/borrower/borrow";
-        }
-	})
-});
-</script>
-<!-- //js for index footer -->
-<script src="../../static/js/footer.js"></script>
-
+	<!-- js -->
+	<script type="text/javascript" src="../../static/js/jquery-2.2.4.min.js"></script>
+	<script src="../../static/js/modernizr-2.6.2.min.js"></script>
+	<script type="text/javascript" src="../../static/js/bootstrap-3.1.1.min.js"></script>
+	<script src="../../static/js/laydate/laydate.js"></script>
+	<!-- //js for index footer -->
+	<script src="../../static/js/footer.js"></script>
+	<!-- //js for index borrow -->
+	<script src="../../static/assets/js/borrow.js"></script>
+	<!-- //js -->
 </body>
 
 </html>
