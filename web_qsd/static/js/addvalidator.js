@@ -46,7 +46,7 @@ $.validator.addMethod("isRegisted", function (value, element) {
             contentType: "application/json; charset=utf-8",
 			async: false,
             data: JSON.stringify({
-                "phone_number": $("#phone_num").val()
+                "phoneNumber": $("#phone_num").val()
             }),
             dataType: "json",
             success: function (message) {
@@ -78,7 +78,7 @@ $.validator.addMethod("isunRegisted", function (value, element) {
             contentType: "application/json; charset=utf-8",
 			async: false,
             data: JSON.stringify({
-                "phone_number": phone_number
+                "phoneNumber": phone_number
             }),
             dataType: "json",
             success: function (message) {
@@ -107,7 +107,7 @@ $.validator.addMethod("isCodeRight", function (value, element) {
 		async:false,
         data: JSON.stringify({
             "phone_number": $("#phone_number").val(),
-			"check_code": value
+			"checkCode": value
         }),
         dataType: "json",
         success: function (message) {
@@ -193,7 +193,7 @@ $(document).ready(function () {
 				contentType: "application/json; charset=utf-8",
 				async:false,
 				data: JSON.stringify({
-				"phone_number": $("#phone_num").val()
+				"phoneNumber": $("#phone_num").val()
 				}),
 				dataType: "json",
 					success: function (message) {
@@ -238,7 +238,7 @@ $(document).ready(function () {
 				url: "localhost:8080/user/register/sendCheckCode2",
 				contentType: "application/json; charset=utf-8",
 				data: JSON.stringify({
-				"bank_account": bank_account
+				"bankAccount": bank_account
 				}),
 				dataType: "json",
 					success: function (message) {
@@ -263,13 +263,13 @@ $(document).ready(function () {
         url: "localhost:8080/user/register/subRegister",
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
-            "phone_number": $("#phone_num").val(),
+            "phoneNumber": $("#phone_num").val(),
             "password": $("#password_1").val(),
-            "user_type": $('#borrower_btn').val(),
-            "user_name": $("#user_name").val(),
-            "id_card": $("#id_card").val(),
-            "bank_account": $("#bank_number").val(),
-	    "verify_code": $("#bk_yzm").val()
+            "userType": $('#borrower_btn').val(),
+            "userName": $("#user_name").val(),
+            "idCard": $("#id_card").val(),
+            "bankAccount": $("#bank_number").val(),
+	    "verifyCode": $("#bk_yzm").val()
         }),
         dataType: "json",
         success: function (message) {
