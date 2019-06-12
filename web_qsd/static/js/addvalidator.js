@@ -69,7 +69,7 @@ $.validator.addMethod("isRegisted", function (value, element) {
 
 // 登录时手机号是否已注册验证
 $.validator.addMethod("isunRegisted", function (value, element) {
-    var phone_number = $("#phone_number").val();
+    var phone_number = $("#phone_num").val();
     var res = false;
     if(phone_number.length ==11 && /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(phone_number)) {
 		$.ajax({
@@ -106,8 +106,8 @@ $.validator.addMethod("isCodeRight", function (value, element) {
         contentType: "application/json; charset=utf-8",
 		async:false,
         data: JSON.stringify({
-            "phone_number": $("#phone_number").val(),
-			"checkCode": value
+            "phone_number": $("#phone_num").val(),
+			"verifyCode": value
         }),
         dataType: "json",
         success: function (message) {
