@@ -10,7 +10,7 @@ $(function(){
            for (ls in list) {
                //temp存放表单信息
 			   temp += '<td>' + list[ls].billId + '</td>';
-			   temp += '<td>' + list[ls].intendMoney + '</td>';
+			   temp += '<td>' + list[ls].intendMoney +"元"+ '</td>';
 			   temp += '<td>' + list[ls].startDate + '</td>';
 			   temp += '<td>' + list[ls].rate + '</td>';
 			   if (list[ls].payType == 1){
@@ -18,8 +18,8 @@ $(function(){
                        } else{
 					temp += '<td>' + '按季还' + '</td>';
                        }
-				temp += '<td>' + list[ls].limitMonths + '</td>';
-				temp += '<td>' + list[ls].raisedMoney + '</td>';
+				temp += '<td>' + list[ls].limitMonths +"个月"+ '</td>';
+				temp += '<td>' + list[ls].raisedMoney +"元"+ '</td>';
 				money = list[ls].intendMoney - list[ls].raisedMoney
            }
            $("#unfinished").html(temp);
