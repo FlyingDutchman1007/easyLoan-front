@@ -16,3 +16,6 @@ $(document).ready(function() {
         }
     })
 });
+$("#borrow_now").click(function () {
+    location.href = "borrow.html";
+});
