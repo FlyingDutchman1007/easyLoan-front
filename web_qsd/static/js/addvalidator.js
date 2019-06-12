@@ -42,7 +42,7 @@ $.validator.addMethod("isRegisted", function (value, element) {
     if(phone_number.length ==11 && /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(phone_number)) {
         $.ajax({
             type: "POST",
-            url: "/information/all/checkPhoneNumber",
+            url: "localhost:8080/user/register/checkPhoneNumber",
             contentType: "application/json; charset=utf-8",
 			async: false,
             data: JSON.stringify({
@@ -74,7 +74,7 @@ $.validator.addMethod("isunRegisted", function (value, element) {
     if(phone_number.length ==11 && /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(phone_number)) {
 		$.ajax({
             type: "POST",
-            url: "/information/all/checkPhoneNumber",
+            url: "localhost:8080/user/register/checkPhoneNumber",
             contentType: "application/json; charset=utf-8",
 			async: false,
             data: JSON.stringify({
@@ -102,10 +102,11 @@ $.validator.addMethod("isCodeRight", function (value, element) {
 		if(value.length == 6){
 	     $.ajax({
         type: "POST",
-        url: "/information/all/checkCheckCode",
+        url: "localhost:8080/user/register/checkCheckCode",
         contentType: "application/json; charset=utf-8",
 		async:false,
         data: JSON.stringify({
+            "phone_number": $("#phone_number").val(),
 			"check_code": value
         }),
         dataType: "json",
@@ -188,7 +189,7 @@ $(document).ready(function () {
 		if(phone_number.length ==11 && /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(phone_number)){
 				$.ajax({
 				type: "POST",
-				url: "/information/all/sendCheckCode",
+				url: "localhost:8080/user/register/sendCheckCode",
 				contentType: "application/json; charset=utf-8",
 				async:false,
 				data: JSON.stringify({
@@ -234,7 +235,7 @@ $(document).ready(function () {
 				$.ajax({
 				type: "POST",
 				async:false,
-				url: "/information/all/sendCheckCode2",
+				url: "localhost:8080/user/register/sendCheckCode2",
 				contentType: "application/json; charset=utf-8",
 				data: JSON.stringify({
 				"bank_account": bank_account
@@ -259,7 +260,7 @@ $(document).ready(function () {
     if($("#bank_number").val() != "" && isBankCardNo($("#bank_number").val()) && $("#bk_yzm").val().length == 6 && $('#agree_sf').is(':checked')) {
 	$.ajax({
         type: "POST",
-        url: "/information/all/register",
+        url: "localhost:8080/user/register/subRegister",
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
             "phone_number": $("#phone_num").val(),
