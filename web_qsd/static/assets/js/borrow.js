@@ -90,18 +90,38 @@ laydate.render({
     }
 });
 
+//获取当前时间
+function getNowFormatDate() {
+    var date = new Date();
+    var seperator1 = "-";
+    var seperator2 = ":";
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+        + " " + date.getHours() + seperator2 + date.getMinutes()
+        + seperator2 + date.getSeconds();
+    return currentdate;
+}
+
 //提交借入
 $("#btn_submit").click(function(){
-    if($("#outputmoney") == "--元"){
+    if($("#outputmoney") != "--元"){
         $.ajax({
             type: "POST",
-            url: "/trade/borrower/loan",
+            url: "http://192.168.0.195:8080/subBorrower",
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify({
                 "intendMoney": $("#intend_money").val(),
                 "rate": $("#rate").val(),
                 "payType": $('#pay_type').val(),
                 "limitMonths": $("#limit_months").val(),
+                "startDate": getNowFormatDate()
             }),
             dataType: "json",
             success: function (message) {
