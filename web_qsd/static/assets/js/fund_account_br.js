@@ -2,7 +2,7 @@ $(document).ready(function() {
     $.ajax({
         type: "GET",
         dataType: "json",
-        url: "/trade/borrower/account",
+        url: "http://192.168.0.195:8080/BorrowerFund",
         success: function (res) {
             $("#user_name").text(res.userName);
             $("#credit_score").text(res.creditScore);
@@ -11,6 +11,8 @@ $(document).ready(function() {
             $("#total_limit").text(res.totalLimit);
             $("#available_limit").text(res.availableLimit);
         },
-        error: function() {}
+        error: function() {
+             alert("未获取到数据");
+        }
     })
 });
