@@ -15,7 +15,7 @@ $(function(){
 			   temp += '<td>' + list[ls].billId + '</td>';
 			   temp += '<td>' + list[ls].intendMoney +"元"+ '</td>';
 			   temp += '<td>' + list[ls].startDate + '</td>';
-			   temp += '<td>' + list[ls].rate + '</td>';
+			   temp += '<td>' + list[ls].payRate + '</td>';
 			   if (list[ls].payType == 1){
                     temp += '<td>' + '按月还' + '</td>';
                        } else{
