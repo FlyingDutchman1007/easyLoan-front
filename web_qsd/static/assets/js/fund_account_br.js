@@ -3,6 +3,9 @@ $(document).ready(function() {
         type: "GET",
         dataType: "json",
         url: "http://192.168.0.195:8080/borrowerFund",
+        xhrFields:{
+            withCredentials:true
+        },
         success: function (res) {
             $("#user_name").text(res.userName);
             $("#credit_score").text(res.creditScore);
