@@ -32,7 +32,11 @@ $(document).ready(function () {
             }else {
                 $("#sex").val(res.sex);
             }
-            $("#address").val("\t\t"+res.address);
+              if(res.address == "未填"){
+                $("#address").val("");
+            }else {
+                $("#address").val("\t\t"+res.address);
+            }
         },
         error: function() {
             alert("获取失败");
