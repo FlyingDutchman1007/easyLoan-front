@@ -117,7 +117,7 @@ $("#btn_submit").click(function(){
     if($("#outputmoney") != "--元"){
         $.ajax({
             type: "POST",
-            url: "http://127.0.0.1:8080/subBorrower",
+            url: "http://127.0.0.1:8080/subBorrow",
              xhrFields:{
                 withCredentials:true
             },
