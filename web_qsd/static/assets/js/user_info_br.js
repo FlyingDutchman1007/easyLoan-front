@@ -3,6 +3,9 @@ $(document).ready(function () {
     $.ajax({
         type: "GET",
         url:'http://192.168.0.195:8080/borrowerInfo',
+        xhrFields:{
+            withCredentials:true
+        },
         dataType: "json",
         success: function(res) {
             if(res.specialIdentity == 0){
@@ -45,8 +48,10 @@ $(document).ready(function () {
 
     $.ajax({
         type: "GET",
-        url:'test.json',
-        /* url: "/BorrowerUserInfo",*/
+        url: "http://192.168.0.195/borrowerInfo",
+        xhrFields:{
+            withCredentials:true
+        },
         dataType: "json",
         success: function(res) {
             $("#avatar").val(res.avatar);
@@ -74,6 +79,9 @@ $("#save_button").click(function(){
     $.ajax({
         type: "POST",
         url: "http://192.168.0.195:8080/UserInfo",
+        xhrFields:{
+            withCredentials:true
+        },
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
             "address": $("#address").val().trim(),
