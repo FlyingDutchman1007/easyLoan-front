@@ -43,6 +43,9 @@ $.validator.addMethod("isRegisted", function (value, element) {
         $.ajax({
             type: "POST",
             url: "http://192.168.0.195:8080/user/register/checkPhoneNumber",
+	    xhrFields:{
+                withCredentials:true
+            },
             contentType: "application/json; charset=utf-8",
 			async: false,
             data: JSON.stringify({
@@ -75,6 +78,10 @@ $.validator.addMethod("isunRegisted", function (value, element) {
 		$.ajax({
             type: "POST",
             url: "http://192.168.0.195:8080/user/register/checkPhoneNumber",
+	    xhrFields:{
+                withCredentials:true
+            },
+           
             contentType: "application/json; charset=utf-8",
 			async: false,
             data: JSON.stringify({
@@ -103,8 +110,15 @@ $.validator.addMethod("isCodeRight", function (value, element) {
 	     $.ajax({
         type: "POST",
         url: "http://192.168.0.195:8080/user/register/checkCheckCode",
-        contentType: "application/json; charset=utf-8",
-		async:false,
+         xhrFields:{
+                withCredentials:true
+            },
+           
+	 contentType: "application/json; charset=utf-8",
+	 xhrFields:{
+                withCredentials:true
+            }  
+	async:false,
         data: JSON.stringify({
             "phoneNumber": $("#phone_num").val(),
 			"verifyCode": value
@@ -190,6 +204,10 @@ $(document).ready(function () {
 				$.ajax({
 				type: "POST",
 				url: "http://192.168.0.195:8080/user/register/sendCheckCode",
+				xhrFields:{
+                		withCredentials:true
+           			 },
+           
 				contentType: "application/json; charset=utf-8",
 				async:false,
 				data: JSON.stringify({
@@ -236,6 +254,10 @@ $(document).ready(function () {
 				type: "POST",
 				async:false,
 				url: "http://192.168.0.195:8080/user/register/sendCheckCode2",
+					 xhrFields:{
+             			   withCredentials:true
+           			 },
+           
 				contentType: "application/json; charset=utf-8",
 				data: JSON.stringify({
 				"bankAccount": bank_account
@@ -261,6 +283,9 @@ $(document).ready(function () {
 	$.ajax({
         type: "POST",
         url: "http://192.168.0.195:8080/user/register/subRegister",
+	xhrFields:{
+                withCredentials:true
+         },
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
             "phoneNumber": $("#phone_num").val(),
