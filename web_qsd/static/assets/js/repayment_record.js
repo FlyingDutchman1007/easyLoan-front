@@ -47,18 +47,18 @@ function getNowFormatDate() {
     return currentdate;
 }
 //发起还款
-$("#repay").click(function () {
+$("#borrower_repay").click(function () {
     $.ajax({
         type: "POST",
         dataType: "json",
-        url: "http://192.168.0.195:8080/subRepayment",
+        url: "http://192.168.0.195:8080/toPayRecordsubRepayment",
         xhrFields:{
             withCredentials:true
         },
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
-            "billId": $("billId").val(),
-            "money": $("#startMoney").val(),
+            "billId": $("#billId").text(),
+            "money": $("#b_repay_money").val(),
             "exactDate": getNowFormatDate()
         }),
         success: function (message) {
