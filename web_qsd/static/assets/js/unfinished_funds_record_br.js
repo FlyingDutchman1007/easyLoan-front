@@ -2,6 +2,9 @@ $(function(){
    $.ajax({
        type: "get",
        url: "br_unfin.json",
+	xhrFields:{
+                withCredentials:true
+         },
        dataType: "json",
        success: function (res) {
            var list = res;
