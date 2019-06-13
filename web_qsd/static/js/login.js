@@ -8,6 +8,9 @@
                $.ajax({
                    type: "POST",
                    url: "http://192.168.0.195:8080/user/register/checkPhoneNumber",
+		   xhrFields:{
+                	withCredentials:true
+           	 },
                    contentType: "application/json; charset=utf-8",
                    async: false,
                    data: JSON.stringify({
@@ -29,8 +32,11 @@
                    $.ajax({
                        type: "POST",
                        url: "http://192.168.0.195:8080/user/login",
-                       contentType: "application/json; charset=utf-8",
-                       data: JSON.stringify({
+			xhrFields:{
+                		withCredentials:true
+           		 },
+			contentType: "application/json; charset=utf-8",
+                      	 data: JSON.stringify({
                            "phoneNumber": $("#phone_number").val(),
                            "password": $("#password").val()
                        }),
