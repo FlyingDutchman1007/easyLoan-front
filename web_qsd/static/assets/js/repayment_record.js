@@ -1,56 +1,75 @@
-$(function(){
+//加载数据
+$(document).ready(function () {
     $.ajax({
         type: "get",
         url: "http://192.168.0.195:8080/toPayRecord",
+        xhrFields:{
+            withCredentials:true
+        },
         dataType: "json",
-        success: function (res) {
-            var list = res;
+        success: function (list) {
             for($i = 0;$i<list.length;$i++) {
-                var temp = "";
-                var type = "月";
-                if(list[$i].pay_type === "3"){
-                    var type = "季";
+                $("#billId").text(list[$i].billId);
+                $("#startDate").text(list[$i].startDate);
+                $("#startMoney").text(list[$i].startMoney + "元");
+                $("#unpayMoney").text(list[$i].unpayMoney + "元");
+                $("#nextTimeShouldPay").text(list[$i].nextTimeShouldPay + "元");
+                $("#liquidatedMoney").text(list[$i].liquidatedMoney + "元");
+                $("#payRate").text(list[$i].payRate + "%");
+                $("#payType").text(list[$i].payType + "%");
+                if(list[$i].payType == "1"){
+                    $("#payType").text("按月还");
+                    }else{
+                    $("#payType").text("按季还");
                 }
-                temp +=
-                    '<tr>'+
-                    '<td>' + list[$i].billId + '</td>' +
-                    '<td>' + list[$i].startDate + '</td>' +
-                    '<td>' + list[$i].startMoney + "元" + '</td>' +
-                    '<td>' + list[$i].unpayMoney + "元" + '</td>' +
-                    '<td>' + list[$i].nextTimeShouldPay + "元" + '</td>' +
-                    '<td>' + list[$i].liquidatedMoney + "元" + '</td>' +
-                    '<td>' + list[$i].payRate + "%" + '</td>' +
-                    '<td>' + list[$i].payType + '</td>' +
-                    '<td>' + list[$i].deadline  + '</td>' +
-                    '<td>' + '<button type="button" class="btn btn-success" id="repay">还款</button>' + '</td>' +
-                    '</tr>';
-                $("#tbody").append(temp);
-            }
+                $("#deadline").text(list[$i].deadline);
+                }
         }
     });
 });
 
-
-$(document).ready(function () {
-    $("#repay").click(function () {
-        $.ajax({
-            type: "POST",
-            dataType: "http://192.168.0.195:8080/subRepayment",
-            url: "",
-            contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({
-                "billId": $("table tr:eq(0) td:eq(0)").text(),
-                "money": $("table tr:eq(0) td:eq(4)").text(),
-                "exactDate": $(Date().toLocaleTimeString()),
-            }),
-            success: function (message) {
-                if (message.state === "successful" ) {
-                    alert("还款成功！");
-                }
-            },
-            error: function () {
-                alert("还款失败，请重新还款！");
+//获取当前时间
+function getNowFormatDate() {
+    var date = new Date();
+    var seperator1 = "-";
+    var seperator2 = ":";
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+        + " " + date.getHours() + seperator2 + date.getMinutes()
+        + seperator2 + date.getSeconds();
+    return currentdate;
+}
+//发起还款
+$("#repay").click(function () {
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        url: "http://192.168.0.195:8080/subRepayment",
+        xhrFields:{
+            withCredentials:true
+        },
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({
+            "billId": $("billId").val(),
+            "money": $("#startMoney").val(),
+            "exactDate": getNowFormatDate()
+        }),
+        success: function (message) {
+            if (message.state == "successful" ) {
+                alert("还款成功！");
+            }else {
+                alert("还款失败，请稍后再试~");
             }
-        })
-    })
+        },
+        error: function () {
+            alert("提交失败，请稍后再试~");
+        }
+    });
 });
