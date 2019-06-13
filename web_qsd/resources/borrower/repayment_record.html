@@ -194,7 +194,9 @@
                           <td id="payRate"></td>
                           <td id="payType"></td>
                           <td id="deadline"></td>
-                          <td><button type="button" class="btn btn-success" id="repay">还款</button></td>
+                          <td>
+                              <button type="button" class="btn btn-success" id="repay" data-toggle="modal" data-target="#modalTable">还款</button>
+                          </td>
                       </tr>
                       </tbody>
                     </table>
@@ -206,6 +208,31 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- repay -->
+  <div id="modalTable" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h3 class="modal-title text-dark"><strong>本期还款</strong></h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <div class="form-group">
+                      <h5>输入要还款的金额</h5>
+                      <h3>本期还需还款 <h5>200</h5></h3>
+                      <input type="text"  oninput="value=value.replace(/[^\d]/g,'')"  class="form-control" name="money" id="b_repay_money" placeholder="最少还款10元,最多本期" >
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                  <button type="button" class="btn btn-primary" id="borrower_repay">还款</button>
+              </div>
+          </div>
+      </div>
   </div>
 
   <!--   Core JS Files   -->
