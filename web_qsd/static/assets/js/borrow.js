@@ -3,6 +3,9 @@ $(document).ready(function () {
     $.ajax({
         type: "GET",
         url: "http://192.168.0.195:8080/borrowerFund",
+        xhrFields:{
+            withCredentials:true
+        },
         dataType: "json",
         success: function (message) {
             $("#limit").text(message.availableLimit+"元");
@@ -115,6 +118,9 @@ $("#btn_submit").click(function(){
         $.ajax({
             type: "POST",
             url: "http://192.168.0.195:8080/subBorrower",
+             xhrFields:{
+                withCredentials:true
+            },
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify({
                 "intendMoney": $("#intend_money").val(),
