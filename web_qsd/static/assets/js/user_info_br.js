@@ -2,8 +2,7 @@
 $(document).ready(function () {
     $.ajax({
         type: "GET",
-        url:'test.json',
-       /* url: "/BorrowerUserInfo",*/
+        url:'http://192.168.0.195:8080/borrowerInfo',
         dataType: "json",
         success: function(res) {
             if(res.specialIdentity == 0){
@@ -70,7 +69,7 @@ $("#address").focusout(function () {
 $("#save_button").click(function(){
     $.ajax({
         type: "POST",
-        url: "/BorrowerUserInfo",
+        url: "http://192.168.0.195:8080/UserInfo",
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
             "address": $("#address").val().trim(),
