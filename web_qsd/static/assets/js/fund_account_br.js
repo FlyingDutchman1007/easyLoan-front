@@ -2,7 +2,7 @@ $(document).ready(function() {
     $.ajax({
         type: "GET",
         dataType: "json",
-        url: "http://192.168.0.195:8080/BorrowerFund",
+        url: "http://192.168.0.195:8080/borrowerFund",
         success: function (res) {
             $("#user_name").text(res.userName);
             $("#credit_score").text(res.creditScore);
