@@ -2,7 +2,7 @@
 $(document).ready(function () {
     $.ajax({
         type: "GET",
-        url:'http://192.168.0.195:8080/borrowerInfo',
+        url:'http://127.0.0.1:8080/borrowerInfo',
         xhrFields:{
             withCredentials:true
         },
@@ -48,7 +48,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "GET",
-        url: "http://192.168.0.195/borrowerInfo",
+        url: "http://127.0.0.1/borrowerInfo",
         xhrFields:{
             withCredentials:true
         },
@@ -78,7 +78,7 @@ $("#address").focusout(function () {
 $("#save_button").click(function(){
     $.ajax({
         type: "POST",
-        url: "http://192.168.0.195:8080/UserInfo",
+        url: "http://127.0.0.1:8080/UserInfo",
         xhrFields:{
             withCredentials:true
         },
