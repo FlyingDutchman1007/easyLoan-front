@@ -1,7 +1,7 @@
 $(function(){
     $.ajax({
         type: "get",
-        url: "toPayRecord",
+        url: "http://192.168.0.195:8080/toPayRecord",
         dataType: "json",
         success: function (res) {
             var list = res;
@@ -35,7 +35,7 @@ $(document).ready(function () {
     $("#repay").click(function () {
         $.ajax({
             type: "POST",
-            dataType: "json",
+            dataType: "http://192.168.0.195:8080/subRepayment",
             url: "",
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify({
