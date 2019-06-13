@@ -23,7 +23,10 @@ $(document).ready(function () {
                     $("#payType").text("按季还");
                 }
                 $("#deadline").text(list[$i].deadline);
+
+                $("#unpayMoney_2").text(list[$i].unpayMoney);
                 }
+
         }
     });
 });
@@ -48,28 +51,37 @@ function getNowFormatDate() {
 }
 //发起还款
 $("#borrower_repay").click(function () {
-    $.ajax({
-        type: "POST",
-        dataType: "json",
-        url: "http://192.168.0.195:8080/toPayRecordsubRepayment",
-        xhrFields:{
-            withCredentials:true
-        },
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({
-            "billId": $("#billId").text(),
-            "money": $("#b_repay_money").val(),
-            "exactDate": getNowFormatDate()
-        }),
-        success: function (message) {
-            if (message.state == "successful" ) {
-                alert("还款成功！");
-            }else {
-                alert("还款失败，请稍后再试~");
+    var repay = $("#b_repay_money").val();
+    var unpay =  $("#unpayMoney").text().replace("元","").trim();
+    alert(repay);
+    alert(unpay);
+    if(repay >= 10 && repay <= unpay) {
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "http://192.168.0.195:8080/subRepayment",
+            xhrFields: {
+                withCredentials: true
+            },
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({
+                "billId": $("#billId").text(),
+                "money": $("#b_repay_money").val(),
+                "exactDate": getNowFormatDate()
+            }),
+            success: function (message) {
+                if (message.state == "successful") {
+                    alert("还款成功！");
+                } else {
+                    alert("还款失败，请稍后再试~");
+                }
+            },
+            error: function () {
+                alert("提交失败，请稍后再试~");
             }
-        },
-        error: function () {
-            alert("提交失败，请稍后再试~");
-        }
-    });
+        });
+    }else{
+        alert("in");
+        $("#b_repay_money").val("");
+    }
 });
