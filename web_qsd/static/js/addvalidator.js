@@ -117,7 +117,7 @@ $.validator.addMethod("isCodeRight", function (value, element) {
 	 contentType: "application/json; charset=utf-8",
 	 xhrFields:{
                 withCredentials:true
-            }  
+            },  
 	async:false,
         data: JSON.stringify({
             "phoneNumber": $("#phone_num").val(),
