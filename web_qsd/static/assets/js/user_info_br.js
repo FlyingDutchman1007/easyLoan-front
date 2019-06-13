@@ -2,11 +2,7 @@
 $(document).ready(function () {
     $.ajax({
         type: "GET",
-<<<<<<< HEAD
-        url: "http://192.168.0.195/borrowerInfo",
-=======
         url:'http://192.168.0.195:8080/borrowerInfo',
->>>>>>> eaa11fb6d74a3360e54b131292731885db9ce53d
         dataType: "json",
         success: function(res) {
             if(res.specialIdentity == 0){
@@ -73,11 +69,7 @@ $("#address").focusout(function () {
 $("#save_button").click(function(){
     $.ajax({
         type: "POST",
-<<<<<<< HEAD
-        url: "http://192.168.0.195/userInfo",
-=======
         url: "http://192.168.0.195:8080/UserInfo",
->>>>>>> eaa11fb6d74a3360e54b131292731885db9ce53d
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
             "address": $("#address").val().trim(),
