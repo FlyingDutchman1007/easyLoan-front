@@ -148,64 +148,87 @@
                   <p class="card-category">支持信息选填和修改</p>
                 </div>
                 <div class="card-body">
-                  <form>
-                    <div class="row">
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">特殊认证</label>
-                          <input id="special_certification" disabled="disabled" type="text" class="form-control" value="">
-                        </div>
-                      </div>
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">姓名</label>
-                          <input id="user_name" disabled="disabled" type="text" class="form-control" value="">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">手机号</label>
-                          <input id="phone_number" disabled="disabled" type="text" class="form-control" value="">
-                        </div>
-                      </div>
-                      <div class="col-md-2">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">性别</label>
-                          <input id="sex" type="text" class="form-control" value="">
-                        </div>
+                  <div class="row">
+                    <div class="col-md-2">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">特殊认证</label>
+                        <input id="special_certification" disabled="disabled" type="text" class="form-control" value="">
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">职业</label>
-                          <input id="profession" type="text" class="form-control" value="">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">教育水平</label>
-                          <input id="educational_level" type="text" class="form-control" value="">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">婚姻状况</label>
-                          <input id="marriage" type="text" class="form-control" value="">
-                        </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">姓名</label>
+                        <input id="user_name" disabled="disabled" type="text" class="form-control" value="">
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">住址</label>
-                          <input id="address" type="text" class="form-control" value="">
-                        </div>
+                    <div class="col-md-5">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">手机号</label>
+                        <input id="phone_number" disabled="disabled" type="text" class="form-control" value="">
                       </div>
                     </div>
-                    <button id="save_button" type="submit" class="btn btn-success pull-right">保存</button>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-1">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">性别</label>
+                        <select id="sex" class="form-control">
+                          <option value="-1">-请选择-</option>
+                          <option value="0">男</option>
+                          <option value="1" >女</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">婚姻状况</label>
+                        <select id="marriage" class="form-control">
+                          <option value="未填">--请选择--</option>
+                          <option value="未婚">未婚</option>
+                          <option value="已婚">已婚</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">教育水平</label>
+                        <select id="educational_level" class="form-control">
+                          <option value="未填">--请选择--</option>
+                          <option value="初中">初中</option>
+                          <option value="高中">高中</option>
+                          <option value="专科">专科</option>
+                          <option value="本科">本科</option>
+                          <option value="硕士">硕士</option>
+                          <option value="博士">博士</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-md-5">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">职业</label>
+                        <select id="profession" class="form-control">
+                          <option value="未填">--请选择--</option>
+                          <option value="学生">学生</option>
+                          <option value="教师">教师</option>
+                          <option value="IT工程师">IT工程师</option>
+                          <option value="白领">白领</option>
+                          <option value="蓝领">蓝领</option>
+                          <option value="其他">其他</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">住址</label>
+                        <input id="address" type="text" class="form-control" value="">
+                      </div>
+                    </div>
+                  </div>
+                    <button id="save_button" type="button" class="btn btn-success pull-right">保存</button>
+                    <button id="rewrite_button" type="button" class="btn btn-success pull-right">重填</button>
                     <div class="clearfix"></div>
-                  </form>
                 </div>
               </div>
             </div>
