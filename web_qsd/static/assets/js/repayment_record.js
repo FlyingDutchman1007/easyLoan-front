@@ -1,7 +1,7 @@
 $(function(){
     $.ajax({
         type: "get",
-        url: "/trade/borrower/loan",
+        url: "toPayRecord",
         dataType: "json",
         success: function (res) {
             var list = res;
@@ -13,16 +13,15 @@ $(function(){
                 }
                 temp +=
                     '<tr>'+
-                    '<td>' + list[$i].bill_id + '</td>' +
-                    '<td>' + list[$i].start_date + '</td>' +
-                    '<td>' + list[$i].start_money + "元" + '</td>' +
-                    '<td>' + list[$i].unpay_money + "元" + '</td>' +
-                    '<td>' + list[$i].next_time_should_pay + "元" + '</td>' +
-                    '<td>' + list[$i].liquidated_money + "元" + '</td>' +
-                    '<td>' + list[$i].pay_rate + "%" + '</td>' +
-                    '<td>' + type + '</td>' +
+                    '<td>' + list[$i].billId + '</td>' +
+                    '<td>' + list[$i].startDate + '</td>' +
+                    '<td>' + list[$i].startMoney + "元" + '</td>' +
+                    '<td>' + list[$i].unpayMoney + "元" + '</td>' +
+                    '<td>' + list[$i].nextTimeShouldPay + "元" + '</td>' +
+                    '<td>' + list[$i].liquidatedMoney + "元" + '</td>' +
+                    '<td>' + list[$i].payRate + "%" + '</td>' +
+                    '<td>' + list[$i].payType + '</td>' +
                     '<td>' + list[$i].deadline  + '</td>' +
-                    '<td>' + list[$i].start_interest + '</td>' +
                     '<td>' + '<button type="button" class="btn btn-success" id="repay">还款</button>' + '</td>' +
                     '</tr>';
                 $("#tbody").append(temp);
@@ -40,9 +39,9 @@ $(document).ready(function () {
             url: "",
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify({
-                "bill_id": $("table tr:eq(0) td:eq(0)").text(),
+                "billId": $("table tr:eq(0) td:eq(0)").text(),
                 "money": $("table tr:eq(0) td:eq(4)").text(),
-                "exact_date": $(Date().toLocaleTimeString()),
+                "exactDate": $(Date().toLocaleTimeString()),
             }),
             success: function (message) {
                 if (message.state === "successful" ) {
