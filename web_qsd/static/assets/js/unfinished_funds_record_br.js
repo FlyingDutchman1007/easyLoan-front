@@ -1,7 +1,7 @@
 $(function(){
    $.ajax({
        type: "get",
-       url: "br_unfin.json",
+       url: "http://192.168.0.195:8080/borrowerToTrade",
 	xhrFields:{
                 withCredentials:true
          },
