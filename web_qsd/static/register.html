@@ -117,7 +117,7 @@
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label>请输入银行卡号</label>
-                                            <input type="text" class="form-control" name="bank_number" id="bank_number"
+                                            <input type="text" class="form-control" name="bank_number" oninput="value=value.replace(/[^\d]/g,'')" id="bank_number"
                                                    placeholder="银行卡号">
                                         </div>
                                         <div class="form-group">
