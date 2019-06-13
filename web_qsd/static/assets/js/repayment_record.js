@@ -2,7 +2,7 @@
 $(document).ready(function () {
     $.ajax({
         type: "get",
-        url: "http://127.0.0.1:8080/borrowerRecord",
+        url: "http://127.0.0.1:8080/toPayRecord",
         xhrFields:{
             withCredentials:true
         },
