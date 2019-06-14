@@ -573,7 +573,7 @@ ul#slider li:nth-child(2) {
 }
 
 ul#slider li:nth-child(3) {
-    background: url(../images/banner3.jpg)no-repeat 0px 0px;
+    background: url(../images/index_images/index_slider_3.jpg)no-repeat 0px 0px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -583,7 +583,7 @@ ul#slider li:nth-child(3) {
 }
 
 ul#slider li:nth-child(4) {
-    background: url(../images/banner4.jpg)no-repeat 0px 0px;
+    background: url(../images/index_images/index_slider_4.jpg)no-repeat 0px 0px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
