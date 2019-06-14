@@ -84,7 +84,6 @@ laydate.render({
                 $("#outputtime").text(subtime+"月");
                 calc_outputmoney();
             } else {
-                alert("in");
                 $("#limit_months").html("");
                 $("#outputtime").text("--月");
                 calc_outputmoney();
@@ -114,7 +113,7 @@ function getNowFormatDate() {
 
 //提交借入
 $("#btn_submit").click(function(){
-    if($("#outputmoney") != "--元"){
+    if($("#outputmoney").text() != "--元"){
         $.ajax({
             type: "POST",
             url: "http://127.0.0.1:8080/subBorrow",
