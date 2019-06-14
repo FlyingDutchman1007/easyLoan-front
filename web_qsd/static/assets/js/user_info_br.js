@@ -9,9 +9,9 @@ $(document).ready(function () {
         dataType: "json",
         success: function(res) {
             if(res.specialIdentity == 0){
-                $("#special_certification").val( "\t\t\t " + "已认证");
+                $("#special_certification").val( "\t\t\t " + "是");
             }else {
-                $("#special_certification").val( "\t\t\t " + "未认证");
+                $("#special_certification").val( "\t\t\t " + "否");
             }
             $("#user_name").val("\t\t " + res.userName);
             $("#phone_number").val("\t\t" + res.phoneNumber);
