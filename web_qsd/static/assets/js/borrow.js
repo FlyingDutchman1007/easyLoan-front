@@ -113,7 +113,7 @@ function getNowFormatDate() {
 
 //提交借入
 $("#btn_submit").click(function(){
-    if($("#outputmoney").text() != "--元"){
+    if($("#outputmoney").text() != "--元" && $("#outputmoney").text() != "0.00元"){
         $.ajax({
             type: "POST",
             url: "http://127.0.0.1:8080/subBorrow",
