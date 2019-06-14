@@ -30,7 +30,7 @@ $(document).ready(function () {
             }else {
                 $("#marriage").val(res.marriage);
             }
-            if(res.sex == -1){
+            if(res.sex == 0){
                 $("#sex").val("-请选择-");
             }else {
                 $("#sex").val(res.sex);
