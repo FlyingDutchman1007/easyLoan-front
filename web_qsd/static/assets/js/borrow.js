@@ -80,7 +80,7 @@ laydate.render({
             $("#outputtime").text(subtime+"月");
             calc_outputmoney();
         }else{
-            if(subtime % 3 == 0 ){
+            if(subtime % 3 == 0 || subtime == 0 ){
                 $("#outputtime").text(subtime+"月");
                 calc_outputmoney();
             } else {
