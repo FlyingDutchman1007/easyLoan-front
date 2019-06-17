@@ -23,7 +23,7 @@ $(function(){
                        }
 				temp += '<td>' + list[ls].limitMonths +"个月"+ '</td>';
 				temp += '<td>' + list[ls].raisedMoney +"元"+ '</td>';
-				money = list[ls].intendMoney - list[ls].raisedMoney
+				money = list[ls].intendMoney - list[ls].raisedMoney;
            }
            $("#unfinished").html(temp);
            $("#money").text(money + "元");
