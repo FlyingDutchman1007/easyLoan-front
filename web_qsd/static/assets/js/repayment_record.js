@@ -26,6 +26,7 @@ $(document).ready(function () {
 
                 $("#unpayMoney_2").text(list[$i].unpayMoney);
                 }
+            $("#repay").css("visibility","visible");
 
         }
     });
