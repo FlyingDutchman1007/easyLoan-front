@@ -31,7 +31,7 @@ $(document).ready(function () {
                 $("#marriage").val(res.marriage);
             }
             if(res.sex == 0){
-                $("#sex").val("-请选择-");
+                $("#sex").val("0");
             }else {
                 $("#sex").val(res.sex);
             }
