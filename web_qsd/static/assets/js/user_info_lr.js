@@ -1,40 +1,89 @@
+//页面加载时读取数据
 $(document).ready(function () {
     $.ajax({
         type: "GET",
-        url: "/information/lender/information",
+        url:'http://192.168.0.195:8080/lenderInfo',
+        xhrFields:{
+            withCredentials:true
+        },
         dataType: "json",
         success: function(res) {
-            $("#user_name").val("\t " + res.user_name);
-            $("#phone_number").val("\t\t" + res.phone_number);
-            $("#sex").val("\t " + res.sex);
-            $("#profession").val("\t " + res.profession);
-            $("#educational_level").val("\t\t " + res.educational_level);
-            $("#marriage").val("\t\t " + res.marriage);
-            $("#address").val("\t " + res.address);
-            //$("#avatar").src(res.avatar);
+            $("#user_name").val("\t\t " + res.userName);
+            $("#phone_number").val("\t\t" + res.phoneNumber);
+            if(res.educationalLevel == "未填"){
+                $("#educational_level").val("未填");
+            }else{
+                $("#educational_level").val(res.educationalLevel);
+            }
+            if(res.profession == "未填"){
+                $("#profession").val("未填");
+            }else {
+                $("#profession").val(res.profession);
+            }
+            if(res.marriage == "未填"){
+                $("#marriage").val("未填");
+            }else {
+                $("#marriage").val(res.marriage);
+            }
+            if(res.sex == "0"){
+                $("#sex").val("0");
+            }else {
+                $("#sex").val(res.sex);
+            }
+            if(res.address == "未填"){
+                $("#address").val("");
+            }else {
+                $("#address").val("\t\t"+res.address);
+            }
         },
-
         error: function() {
-            alert("error");
+            alert("获取失败");
         }
+    });
 
+    $.ajax({
+        type: "GET",
+        url: "#",
+        xhrFields:{
+            withCredentials:true
+        },
+        dataType: "json",
+        success: function(res) {
+            $("#avatar").val(res.avatar);
+        },
+        error: function() {
+            //alert("头像获取失败");
+        }
     });
 });
-
+//重填按钮
+$("#rewrite_button").click(function(){
+    location.href = "user_info.html";
+});
+//填写地址样式
+$("#address").focusin(function () {
+    var address = $("#address").val().trim();
+    $("#address").val(address);
+});
+$("#address").focusout(function () {
+    var address = $("#address").val();
+    $("#address").val("\t\t"+address);
+});
+//提交数据
 $("#save_button").click(function(){
     $.ajax({
-        type: "PUT",
-        url: "/information/lender/information",
+        type: "POST",
+        url: "http://192.168.0.195:8080/UserInfo",
+        xhrFields:{
+            withCredentials:true
+        },
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
             "address": $("#address").val().trim(),
-            //"avatar": $("#avatar").src(), 单独接口提交
-            "educational_level": $("#educational_level").val().trim(),
-            "marriage": $("#marriage").val().trim(),
-            "phone_number": $("#phone_number").val().trim(),
-            "profession": $("#profession").val().trim(),
-            "sex": $("#sex").val().trim(),
-            //"user_name": $("#user_name").val().trim()
+            "educationalLevel": $("#educational_level").val(),
+            "marriage": $("#marriage").val(),
+            "profession": $("#profession").val(),
+            "sex": $("#sex").val(),
         }),
         dataType: "json",
         success: function (message) {
@@ -48,5 +97,4 @@ $("#save_button").click(function(){
             alert("error");
         }
     })
-
 });
