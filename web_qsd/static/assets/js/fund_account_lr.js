@@ -3,15 +3,18 @@ $(document).ready(
     $.ajax({
         type: "get",
         dataType: "json",
-        url: "/trade/lender/account",
+        url: "http://192.168.0.195:8080/lenderFund",
+        xhrFields:{
+            withCredentials:true
+        },
         success: function (res) {
-            $("#user_name").text(res.user_name);
-            $("#bank_account").text(res.bank_account);
-            $("#account_balance").text(res.account_balance);
-            $("#current_income").text(res.current_benefit);
-            $("#expected_income").text(res.expected_benefit);
-	    $("#lend_money").text(res.lend_money);
-            $("#available_money").text(res.available_money);
+            $("#user_name").text(res.userName);
+            $("#bank_account").text(res.bankAccount);
+            $("#account_balance").text(res.accountBalance);
+            $("#current_income").text(res.totalBenefit);
+            $("#expected_income").text(res.futureBenefit);
+	    $("#lend_money").text(res.lendMoney);
+            $("#available_money").text(res.availableMoney);
         },
         error: function() {}
 
