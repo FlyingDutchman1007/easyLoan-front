@@ -2,7 +2,7 @@ $(function(){
    $.ajax({
        type : "get",
        dataType : "json",
-       url : "fin_rec.json",
+       url : "http://192.168.0.195:8080/borrowerFinishedRecord",
        success : function (list) {
            for($i = 0;$i<list.length;$i++){
                var temp = "";
