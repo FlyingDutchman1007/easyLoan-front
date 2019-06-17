@@ -22,7 +22,7 @@ $(function(){
                     '<td>' + list[$i].totalMoney + "元" + '</td>' +
                     '<td>' + list[$i].rate + "%" + '</td>' +
                     '<td>' + type + '</td>' +
-                    '<td>' + list[$i].limitMonths + "月" + '</td>' +
+                    '<td>' + list[$i].limitMonths + "个月" + '</td>' +
                     '<td>' + list[$i].startDate + '</td>' +
                     '<td>' + list[$i].payUpDate + '</td>' +
                     '</tr>';
