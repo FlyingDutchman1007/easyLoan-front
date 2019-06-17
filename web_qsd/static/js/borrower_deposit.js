@@ -1,7 +1,10 @@
 $("#borrower_deposit").click(function () {
     $.ajax({
         type: "POST",
-        url: "http://127.0.0.1:8080/borrowerRechange",
+        url: "http://127.0.0.1:8080/borrowerRecharge",
+         xhrFields:{
+            withCredentials:true
+        },
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
             "money": $("#b_deposit_money").val()
