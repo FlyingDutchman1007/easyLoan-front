@@ -197,68 +197,9 @@
 	<!-- //footer -->
 <!-- js -->
 <script type="text/javascript" src="../../static/js/jquery-2.1.4.min.js"></script>
-<!-- //js for index footer -->
-<script src="../../static/js/footer.js"></script>
-<!-- //js -->
-<script src="../../static/js/modernizr-2.6.2.min.js"></script>
-<!-- //nav -->
-<!-- Countdown-Timer-JavaScript -->
-<script src="../../static/js/simplyCountdown.js"></script>
-<script>
-	var d = new Date(new Date().getTime() + 948 * 120 * 120 * 2000);
-
-	// default example
-	simplyCountdown('.simply-countdown-one', {
-		year: d.getFullYear(),
-		month: d.getMonth() + 1,
-		day: d.getDate()
-	});
-
-	// inline example
-	simplyCountdown('.simply-countdown-inline', {
-		year: d.getFullYear(),
-		month: d.getMonth() + 1,
-		day: d.getDate(),
-		inline: true
-	});
-
-	//jQuery example
-	$('#simply-countdown-losange').simplyCountdown({
-		year: d.getFullYear(),
-		month: d.getMonth() + 1,
-		day: d.getDate(),
-		enableUtc: false
-	});
-</script>
-<!-- //Countdown-Timer-JavaScript -->
-<!-- script for responsive tabs -->
-<script src="../../static/js/easy-responsive-tabs.js"></script>
-<script>
-	$(document).ready(function () {
-		$('#horizontalTab').easyResponsiveTabs({
-			type: 'default', //Types: default, vertical, accordion
-			width: 'auto', //auto or any width like 600px
-			fit: true, // 100% fit in a container
-			closed: 'accordion', // Start closed if in accordion view
-			activate: function (event) { // Callback function if tab is switched
-				var $tab = $(this);
-				var $info = $('#tabInfo');
-				var $name = $('span', $info);
-				$name.text($tab.text());
-				$info.show();
-			}
-		});
-		$('#verticalTab').easyResponsiveTabs({
-			type: 'vertical',
-			width: 'auto',
-			fit: true
-		});
-	});
-</script>
 <script type="text/javascript" src="../../static/js/bootstrap-3.1.1.min.js"></script>
 <!--获取匹配用户信息-->
 <script type="text/javascript" src="../../static/js/mate_lend.js"></script>
-<script type="text/javascript" src="../../static/js/get_my_info.js"></script>
 </body>
 
 </html>
