@@ -1,4 +1,5 @@
 //加载页面时，获取信用额度
+var limit = 0;
 $(document).ready(function () {
     $.ajax({
         type: "GET",
@@ -9,6 +10,7 @@ $(document).ready(function () {
         dataType: "json",
         success: function (message) {
             $("#limit").text(message.availableLimit+"元");
+            limit = message.availableLimit;
         },
         error: function () {
             $("#limit").text("---元");
@@ -30,7 +32,7 @@ function calc_outputmoney(){
 $("#intend_money").focusout(function () {
     var intend_money = $("#intend_money").val();
     var limit_months = $("#outputtime").text().replace("月","").trim();
-    if(intend_money <= 0 || intend_money >=100000 || intend_money % 100 != 0 ){
+    if(intend_money <= 0 || intend_money >=limit || intend_money % 100 != 0 ){
         $("#intend_money").val("");
         calc_outputmoney();
     }else{
