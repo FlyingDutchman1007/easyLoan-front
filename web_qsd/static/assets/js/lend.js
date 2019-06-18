@@ -130,7 +130,7 @@ $("#btn_submit").click(function(){
     if($("#outputmoney").text() != "--元" && $("#outputmoney").text() != "0.00元" && periods != 0){
         $.ajax({
             type: "POST",
-            url: "http://192.168.0.195:8080/subLend",
+            url: "http://192.168.0.195:8080/subLendQuery",
             xhrFields:{
                 withCredentials:true
             },
