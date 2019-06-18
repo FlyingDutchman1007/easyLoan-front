@@ -2,7 +2,7 @@
 $(document).ready(function () {
     $.ajax({
         type: "GET",
-        url: "http://127.0.0.1:8080/borrowerFund",
+        url: "http://192.168.0.195:8080/borrowerFund",
         xhrFields:{
             withCredentials:true
         },
@@ -116,7 +116,7 @@ $("#btn_submit").click(function(){
     if($("#outputmoney").text() != "--元" && $("#outputmoney").text() != "0.00元"){
         $.ajax({
             type: "POST",
-            url: "http://127.0.0.1:8080/subBorrow",
+            url: "http://192.168.0.195:8080/subBorrow",
              xhrFields:{
                 withCredentials:true
             },
