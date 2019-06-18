@@ -3,7 +3,7 @@ var limit = 0;
 $(document).ready(function () {
     $.ajax({
         type: "GET",
-        url: "fund_account.json",
+        url: "http://192.168.0.195:8080/lenderFund",
         xhrFields:{
             withCredentials:true
         },
@@ -130,7 +130,7 @@ $("#btn_submit").click(function(){
     if($("#outputmoney").text() != "--元" && $("#outputmoney").text() != "0.00元" && periods != 0){
         $.ajax({
             type: "POST",
-            url: "#",
+            url: "http://192.168.0.195:8080/subLend",
             xhrFields:{
                 withCredentials:true
             },
