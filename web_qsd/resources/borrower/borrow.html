@@ -157,8 +157,8 @@
 							<div style="height:60px">
 								<label><span>借入金额</span></label>
 								<div class="styled-input agile-styled-input-top">
-									<!--intend_money-->
-									<input type ="text" id="intend_money" name ="intend_money" autocomplete="off" placeholder="金额限制0 ~ 信用额度，必须为100的整数倍，存在未还清借款时不能借款" oninput="value=value.replace(/[^\d]/g,'')" >
+									<!--borrow-->
+									<input type ="text" id="intend_money" name ="intend_money" autocomplete="off" placeholder="金额限制100 ~ 信用额度，必须为100的整数倍，存在未还清借款时不能借款" oninput="value=value.replace(/[^\d]/g,'')" >
 								</div>
 							</div>
 							<br/>
@@ -187,7 +187,7 @@
 							<div style="'height: 60px;">
 								<label><span>借款期限</span></label>
 								<div class="styled-input">
-									<input type="text"  id="limit_months" name="limit_months" autocomplete="off" style="padding: 0px" placeholder="选择按季还款时，月数必须是3的倍数">
+									<input type="text"  id="limit_months" name="limit_months" autocomplete="off" style="padding: 0px" placeholder="选择按季还款时，借款月数必须是3的倍数">
 								</div>
 							</div>
 							<br>
@@ -195,10 +195,16 @@
 						</div>
 						<div class="col-md-6 text-center ">
 							<div class="row">
+								<div class="row" style="min-height:30px;">
+									<!--占位-->
+								</div>
 								<div class="col-md-6 text-right text-success"><h4><small>信用额度:</small></h4></div>
 								<div class="col-md-6">
-									<h3 id="limit">--元</h3>
+									<h2  style="color : #0accff "><strong id="limit">--元</strong></h2>
 								</div>
+							</div>
+							<div class="row" style="min-height:100px;">
+								<!--占位-->
 							</div>
 							<div class="row" style="padding: 20px 0px 50px 0px">
 								<br>
@@ -214,14 +220,15 @@
 								</div>
 							</div>
 						</div>
-				<div class="checkbox-model"></div>
+				        <div class="checkbox-model"></div>
                     </div>
             </div>
+            <!-- //borrow -->
             <div class="clearfix"> </div>
         </div>
     </div>
 </div>
-<!-- //borrow -->
+
 
 <!-- footer -->
 	<div class="footer">
