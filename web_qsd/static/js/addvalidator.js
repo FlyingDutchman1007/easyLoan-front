@@ -42,7 +42,7 @@ $.validator.addMethod("isRegisted", function (value, element) {
     if(phone_number.length ==11 && /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(phone_number)) {
         $.ajax({
             type: "POST",
-            url: "http://127.0.0.1:8080/user/register/checkPhoneNumber",
+            url: "http://192.168.0.195:8080/user/register/checkPhoneNumber",
 	    xhrFields:{
                 withCredentials:true
             },
@@ -77,11 +77,10 @@ $.validator.addMethod("isunRegisted", function (value, element) {
     if(phone_number.length ==11 && /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(phone_number)) {
 		$.ajax({
             type: "POST",
-            url: "http://127.0.0.1:8080/user/register/checkPhoneNumber",
+            url: "http://192.168.0.195:8080/user/register/checkPhoneNumber",
 	    xhrFields:{
                 withCredentials:true
             },
-           
             contentType: "application/json; charset=utf-8",
 			async: false,
             data: JSON.stringify({
@@ -109,11 +108,10 @@ $.validator.addMethod("isCodeRight", function (value, element) {
 		if(value.length == 6){
 	     $.ajax({
         type: "POST",
-        url: "http://127.0.0.1:8080/user/register/checkCheckCode",
+        url: "http://192.168.0.195:8080/user/register/checkCheckCode",
          xhrFields:{
                 withCredentials:true
             },
-           
 	 contentType: "application/json; charset=utf-8",
 	 xhrFields:{
                 withCredentials:true
@@ -203,11 +201,10 @@ $(document).ready(function () {
 		if(phone_number.length ==11 && /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/.test(phone_number)){
 				$.ajax({
 				type: "POST",
-				url: "http://127.0.0.1:8080/user/register/sendCheckCode",
+				url: "http://192.168.0.195:8080/user/register/sendCheckCode",
 				xhrFields:{
                 		withCredentials:true
            			 },
-           
 				contentType: "application/json; charset=utf-8",
 				async:false,
 				data: JSON.stringify({
@@ -248,12 +245,11 @@ $(document).ready(function () {
                 settime(obj)
             },1000)
         }
-		
 			if(isBankCardNo(bank_account)){
 				$.ajax({
 				type: "POST",
 				async:false,
-				url: "http://127.0.0.1:8080/user/register/sendCheckCode2",
+				url: "http://192.168.0.195:8080/user/register/sendCheckCode2",
 					 xhrFields:{
              			   withCredentials:true
            			 },
@@ -282,7 +278,7 @@ $(document).ready(function () {
     if($("#bank_number").val() != "" && isBankCardNo($("#bank_number").val()) && $("#bk_yzm").val().length == 6 && $('#agree_sf').is(':checked')) {
 	$.ajax({
         type: "POST",
-        url: "http://127.0.0.1:8080/user/register/subRegister",
+        url: "http://192.168.0.195:8080/user/register/subRegister",
 	xhrFields:{
                 withCredentials:true
          },
