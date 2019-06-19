@@ -54,6 +54,7 @@ $("#submit_btn").click(function () {
         success: function (message) {
             if(message.state == "successful") {
                 alert("认证成功");
+                location.href = "special_certification.html";
             } else {
                 alert("认证失败");
             }
