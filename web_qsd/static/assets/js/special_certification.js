@@ -2,7 +2,7 @@ $(document).ready(function () {
     $.ajax({
         type : "get",
         dataType : "json",
-        url : "avatar.json", //这里填url！！！！！！！！！！！！！！！！！！！！！
+        url : "127.0.0.1:8080/getStudentCard", //这里填url！！！！！！！！！！！！！！！！！！！！！
         xhrFields:{
             withCredentials:true
         },
@@ -39,10 +39,10 @@ function showImg() {
 $("#submit_btn").click(function () {
     alert("in");
     var formData = new FormData();
-    formData.append('file', $('#upload_file')[0].files[0]);
+    formData.append('avatar', $('#upload_file')[0].files[0]);
     $.ajax({
         type: "POST",
-        url: "#", //这里填url！！！！！！！！！！！！！！！！！！！！！！
+        url: "127.0.0.1:8080/uploadStudentCard", //这里填url！！！！！！！！！！！！！！！！！！！！！！
         xhrFields:{
             withCredentials:true
         },
