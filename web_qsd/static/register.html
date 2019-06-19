@@ -134,7 +134,7 @@
                                         <div class="form-group col-md-12 text-center">
                                             <div class="checkbox">
                                                 <label for="agree_sf"><input type="checkbox" id="agree_sf" name="agree_sf" >我已阅读三方存管协议并同意开通三方存管账号<br/></label>
-                                                <a href="login.html">三方存管协议</a>
+                                                <a data-toggle="modal" data-target="#tripleAgreement">三方存管协议</a>
                                             </div>
                                         </div>
                                     </div>
@@ -161,6 +161,43 @@
         </div><!-- end row -->
     </div> <!--  big container -->
 </div>
+	<!--三方存管协议-->
+<div id="tripleAgreement" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-dark" style="margin-left: 10em"><strong>三方存管协议</strong></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" >
+                <div class="form-group" style="height:350px; overflow-y: scroll">
+                    <div style="font-size: 15px">
+                        <h5 class="modal-title text-dark" style="text-align: center;"><strong>资金存管</strong></h5>
+                        <p>第一条&nbsp;&nbsp;用户资金存管服务由招商银行股份有限公司提供，用户与青松贷签署法律文本，即视为用户不可撤销地授权青松贷平台将用户在青松贷平台提交的实名信息（包括但不限于姓名、身份证号、手机号码等）提交/发送给招商银行股份有限公司，同时授权招商银行股份有限公司按照青松贷平台发送的指令为用户开通资金存管账户，并授权招商银行股份有限公司有权根据青松贷指令进行相应资金划拨。</p>
+                        <p>第二条&nbsp;&nbsp;招商银行股份有限公司仅提供资金存管服务，不对项目具体情况、资金来源、用途 及投资资金安全承担任何包括但不限于核实项目真实性、有效性、合法性及投资资金本金及收益担保等责任。</p>
+                        <p>第三条&nbsp;&nbsp;用户与青松贷签署法律文本即视为其同意，对于青松贷平台向其提供的用户个人信息和 资料，招商银行股份有限公司有权在资金存管业务范围内进行使用、记载及保留。</p>
+                        <p>第四条&nbsp;&nbsp;用户与青松贷签署法律文本即视为其同意，招商银行股份有限公司有权根据有 关法律、法规、规章及其他政府规范性文件的要求向司法机关和政府部门等有权机关提供用户的任何个人 资料及交易信息等资料。 </p>
+                    </div>
+
+                    <div style="font-size: 15px">
+                        <h5 class="modal-title text-dark" style="text-align: center;"><strong>银行卡绑定</strong></h5>
+                        <p>第五条&nbsp;&nbsp;银行卡绑定是指用户将其所持有的银行储蓄卡与所注册的青松贷账户建立的一一对应关系， 以便用户使用该银行卡通过拍拍贷合作的银行或金融机构直接支付或收取款项、通过青松贷账户余额充值或提取款项等服务。用户在进行银行卡绑定时，应当填写该等银行卡的发卡行、卡号、用户的真实姓名、用户在发卡行预留的手机号码、手机动态验证密码及其身份证号码等绑定信息，且前述绑定信息须通过发卡行及/或拍拍贷合作的银行或金融机构验证成功（但并不因此负责用户信息真实性、准确性）后才能进行绑定。</p>
+                        <p>第六条&nbsp;&nbsp;用户应当确保其为进行绑定及使用本服务的银行卡的真实、合法持有人，可合法、有效使用 该银行卡，并授权青松贷合作的银行或金融机构可以自行或通过第三方渠道对用户所提供个人信息的真实性、有效性进行核实。 用户承诺，其绑定银行卡以及使用本服务的行为未侵犯任何第三方的合法权益，否则用户对因此造成拍拍贷及其合作的银行或金融机构或银行卡真实持卡人遭受任何损失的，用户应承担全部的赔偿责任并承担全部法律后果，青松贷不因此承担任何赔偿责任。且青松贷有权对用户的青松贷账户中的余额进行冻结、终止或中止为用户提供青松贷相关服务。</p>
+                        <p>第七条&nbsp;&nbsp;用户同意并授权合作银行或金融机构在用户主动使用快捷充值或还款时， 使用已绑定的用户本人银行卡余额进行支付。 用户授权将客户四要素信息共享给青松贷及其关联方的的合作机构（包括但不限于信托、银行等持牌金融机构）。</p>
+                        <p>第八条&nbsp;&nbsp;用户应妥善保管银行卡、卡号、发卡行预留的手机号码以及青松贷账号、密码、来自于银行或金融机构或青松贷向用户发送的校验码等与银行卡或与用户青松贷账户有关的一切信息和设备；如用户遗失或泄露前述信息和/或设备的，用户应及时通知发卡行及/或青松贷，以减少可能发生的损失。无论 是否已通知发卡行及/或青松贷，因用户的信息或设备管理不善原因所致须由用户自行承担。  </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//三方存管协议-->
 
 </body>
 	<!--   Core JS Files   -->
