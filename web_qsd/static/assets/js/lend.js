@@ -105,25 +105,6 @@ laydate.render({
     }
 });
 
-//获取当前时间
-function getNowFormatDate() {
-    var date = new Date();
-    var seperator1 = "-";
-    var seperator2 = ":";
-    var month = date.getMonth() + 1;
-    var strDate = date.getDate();
-    if (month >= 1 && month <= 9) {
-        month = "0" + month;
-    }
-    if (strDate >= 0 && strDate <= 9) {
-        strDate = "0" + strDate;
-    }
-    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
-        + " " + date.getHours() + seperator2 + date.getMinutes()
-        + seperator2 + date.getSeconds();
-    return currentdate;
-}
-
 //提交借入
 $("#btn_submit").click(function(){
     var periods = $("#periods").text().replace("期","").trim();
@@ -137,16 +118,16 @@ $("#btn_submit").click(function(){
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify({
                 "intendMoney": $("#intend_money").val(),
-                "rate": $("#rate").val(),
+                "expectRate": $("#rate").val(),
                 "payType": $('#pay_type').val(),
-                "limitMonths": $("#limit_months").val(),
-                "startDate": getNowFormatDate()
+                "limitMonths": $("#limit_months").val()
             }),
             dataType: "json",
             success: function (message) {
                 if (message.state == "successful" ) {
                     alert("提交成功");
-                    location.href = "borrow.html";
+                    location.href = "lend_match.html?money="+money+ "&&pay_type=" + pay_type +
+                        "&&rate=" + rate + "&&limit_months=" + periods*pay_type;
                 }else{
                     alert("借款额度不足");
                 }
