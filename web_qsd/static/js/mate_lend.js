@@ -31,12 +31,12 @@ $(function() {
                 }
                 var date = list[$i].startDate.split("T")[0];
                 temp +=
-                    '<li>' + "借单号  :" + '<strong>' + list[$i].billID + '</strong>' + '</li>' +
+                    '<li>' + "借单号&nbsp;:" + '<strong>' + list[$i].billID + '</strong>' + '</li>' +
                     '<li>' + "借款金额:" + '<strong>' + list[$i].intendMoney + '</strong>' + "元" + '</li>' +
                     '<li>' + "起始日期:" + '<strong>' + date + '</strong>'  + '</li>' +
-                    '<li>' + "利率&nbsp&nbsp:" + '<strong>' + list[$i].payRate + '</strong>' + "%" + '</li>' +
+                    '<li>' + "利率&nbsp;&nbsp;:" + '<strong>' + list[$i].payRate + '</strong>' + "%" + '</li>' +
                     '<li>' + "还款方式:" + '<strong>' + type + '</strong>'  + '</li>' +
-                    '<li>' + "期限&nbsp&nbsp:" + '<strong>' + list[$i].limitMomths + '</strong>' + "月" + '</li>' +
+                    '<li>' + "期限&nbsp;&nbsp;:" + '<strong>' + list[$i].limitMomths + '</strong>' + "月" + '</li>' +
                     '<li>' + "已筹集金额:" + '<strong>' + list[$i].raisedMoney + '</strong>' + "元" + '</li>';
                 $("#list_info" + ($i+1)).html(temp);
                 $("#surplus" + ($i+1)).text(parseInt(list[$i].intendMoney) - parseInt(list[$i].raisedMoney));
