@@ -29,18 +29,16 @@ function showImg() {
                 file_img.setAttribute('src', reader.result);
             }
             var formData = new FormData();
-            formData.append('file', $('#upload_file')[0].files[0]);
+            formData.append('avatar', $('#upload_file')[0].files[0]);
             $.ajax({
                 type: "POST",
-                url: "http://192.168.0.195:8080/uploadAvtar",
+                url: "http://192.168.0.195:8080/uploadAvatar",
                 xhrFields:{
                     withCredentials:true
                 },
                 processData: false,
                 contentType: false,
-                data: JSON.stringify({
-                    "avatar":formData
-                }),
+                data: formData,
                 cache: false,
                 dataType: "json",
                 success: function (message) {
