@@ -63,7 +63,7 @@ $("#address").focusout(function () {
 $("#save_button").click(function(){
     $.ajax({
         type: "POST",
-        url: "http://192.168.0.195:8080/UserInfo",
+        url: "http://192.168.0.195:8080/userInfo",
         xhrFields:{
             withCredentials:true
         },
