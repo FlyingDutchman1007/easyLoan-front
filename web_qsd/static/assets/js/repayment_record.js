@@ -82,7 +82,6 @@ $("#borrower_repay").click(function () {
             }
         });
     }else{
-        alert("in");
         $("#b_repay_money").val("");
     }
 });
