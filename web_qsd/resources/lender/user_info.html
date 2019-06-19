@@ -229,13 +229,15 @@
             <div class="col-md-4">
               <div class="card card-profile">
                 <div class="card-avatar">
-                  <a href="#">
+                     <label for="upload_file">
                     <img id="avatar" class="img" src="#" />
-                  </a>
+                    <input type="file" name="upload_file" id="upload_file"
+                           accept="image/jpg,image/jpeg"  onchange="showImg();" style="display:none">
+                  </label>
                 </div>
                 <div class="card-body">
-                  <p class="card-description">
-                      我是宇宙第一帅！
+                   <p class="card-description">
+                    点击上方头像修改
                   </p>
                 </div>
               </div>
