@@ -2,8 +2,7 @@ $(document).ready(function () {
     $.ajax({
         type : "get",
         dataType : "json",
- /*       url : "http://192.168.0.195:8080/getAvatar",*/
-        url:"avatar.json",
+        url : "http://192.168.0.195:8080/getAvatar",
         xhrFields:{
             withCredentials:true
         },
