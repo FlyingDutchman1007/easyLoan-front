@@ -45,21 +45,6 @@ $(document).ready(function () {
             alert("获取失败");
         }
     });
-
-    $.ajax({
-        type: "GET",
-        url: "http://127.0.0.1/borrowerInfo",
-        xhrFields:{
-            withCredentials:true
-        },
-        dataType: "json",
-        success: function(res) {
-            $("#avatar").val(res.avatar);
-        },
-        error: function() {
-            alert("头像获取失败");
-        }
-    });
 });
 //重填按钮
 $("#rewrite_button").click(function(){
