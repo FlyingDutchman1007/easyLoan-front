@@ -38,7 +38,9 @@ function showImg() {
                 },
                 processData: false,
                 contentType: false,
-                data: formData,
+                data: JSON.stringify({
+                    "avatar":formData
+                }),
                 cache: false,
                 dataType: "json",
                 success: function (message) {
