@@ -2,7 +2,7 @@
 $(document).ready(function () {
     $.ajax({
         type: "get",
-        url: "http://192.168.0.195:8080/toPayRecord",
+        url: "http://127.0.0.1:8080/toPayRecord",
         xhrFields:{
             withCredentials:true
         },
@@ -60,7 +60,7 @@ $("#borrower_repay").click(function () {
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: "http://192.168.0.195:8080/subRepayment",
+            url: "http://127.0.0.1:8080/subRepayment",
             xhrFields: {
                 withCredentials: true
             },
