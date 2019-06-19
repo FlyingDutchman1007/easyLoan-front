@@ -1,7 +1,7 @@
 $("#lender_deposit").click(function () {
     $.ajax({
         type: "POST",
-        url: "http://192.168.0.195:8080/lenderRechange",
+        url: "http://192.168.0.195:8080/lenderRecharge",
         xhrFields:{
             withCredentials:true
         },
