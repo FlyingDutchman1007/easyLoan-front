@@ -14,7 +14,7 @@ $(function() {
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
             "expectRate": rate,
-            "lendMoney": money,
+            "intendMoney": money,
             "payType": pay_type,
             "limitMonths": limit_months
         }),
