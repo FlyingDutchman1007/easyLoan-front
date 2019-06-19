@@ -10,7 +10,7 @@ $(function() {
     $("#my_month").text(limit_months+"月");
     $.ajax({
         type: "POST",
-        url: "http://192.168.0.195:8080/lendMatch",
+        url: "http://127.0.0.1:8080/lendMatch",
         xhrFields:{
             withCredentials:true
         },
