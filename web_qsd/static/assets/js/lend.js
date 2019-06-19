@@ -108,6 +108,9 @@ laydate.render({
 //提交借入
 $("#btn_submit").click(function(){
     var periods = $("#periods").text().replace("期","").trim();
+    var pay_type = $("#pay_type").val();
+    var money = $("#intend_money").val();
+    var rate = $("#rate").val();
     if($("#outputmoney").text() != "--元" && $("#outputmoney").text() != "0.00元" && periods != 0){
         $.ajax({
             type: "POST",
