@@ -1,7 +1,7 @@
 $(function(){
     $.ajax({
         type: "get",
-        url: "http://192.168.0.195:8080/lenderToTrade",
+        url: "http://127.0.0.1:8080/lenderToTrade",
         xhrFields:{
             withCredentials:true
         },
