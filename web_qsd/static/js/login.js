@@ -7,7 +7,7 @@
                /^(?=.*[0-9])(?=.*[a-zA-Z])(.{6,20})$/.test(password)) {
                $.ajax({
                    type: "POST",
-                   url: "http://192.168.0.195:8080/user/register/checkPhoneNumber",
+                   url: "http://127.0.0.1:8080/user/register/checkPhoneNumber",
 		   xhrFields:{
                 	withCredentials:true
            	 },
@@ -31,7 +31,7 @@
                if (res == true) {
                    $.ajax({
                        type: "POST",
-                       url: "http://192.168.0.195:8080/user/login",
+                       url: "http://127.0.0.1:8080/user/login",
 			xhrFields:{
                 		withCredentials:true
            		 },
