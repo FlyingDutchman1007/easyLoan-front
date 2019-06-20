@@ -120,10 +120,10 @@ $("#btn_submit").click(function(){
             },
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify({
-                "intendMoney": $("#intend_money").val(),
-                "expectRate": $("#rate").val(),
-                "payType": $('#pay_type').val(),
-                "limitMonths": $("#limit_months").val()
+                "intendMoney": money,
+                "expectRate": rate,
+                "payType": pay_type,
+                "limitMonths": periods*pay_type
             }),
             dataType: "json",
             success: function (message) {
