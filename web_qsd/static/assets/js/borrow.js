@@ -127,7 +127,7 @@ $("#btn_submit").click(function(){
                 "intendMoney": $("#intend_money").val(),
                 "rate": $("#rate").val(),
                 "payType": $('#pay_type').val(),
-                "limitMonths": $("#limit_months").val(),
+                "limitMonths": $("#outputtime").text().repalce("月","").trim(),
                 "startDate": getNowFormatDate()
             }),
             dataType: "json",
