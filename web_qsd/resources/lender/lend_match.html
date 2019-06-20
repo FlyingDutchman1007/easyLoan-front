@@ -8,27 +8,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="" />
-	<script type="application/x-javascript">
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
-
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
-	<!-- //custom-theme -->
 	<link href="../../static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-	<!-- Owl-carousel-CSS -->
 	<link rel="stylesheet" href="../../static/css/jquery.countdown.css" />
 	<link href="../../static/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
-	<!--jquery-css-->
-	<link rel="stylesheet" href="../css/team.css" type="text/css" media="all" />
 	<link href="../../static/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="../../static/css/footer.css" rel="stylesheet" type="text/css" media="all" />
-	<!-- font-awesome-icons -->
 	<link href="../../static/css/font-awesome.css" rel="stylesheet">
-	<!-- //font-awesome-icons -->
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
 </head>
@@ -85,8 +70,8 @@
 			 </div>
 		</div>
 
-		<!--first-->
-		<div class="priceing-table-main">
+		<div id="match_div" class="priceing-table-main">
+	<!--		&lt;!&ndash;first&ndash;&gt;
 			<div class="col-md-4 price-grid" style="padding-bottom: 30px">
 				<div class="price-block agile">
 					<div class="price-gd-top pric-clr1">
@@ -96,7 +81,7 @@
 					<div class="price-gd-bottom">
 						<div class="price-list">
 							<ul id="list_info1">
-								<!-- ajax 动态传输数据 -->
+								&lt;!&ndash; ajax 动态传输数据 &ndash;&gt;
 							</ul>
 						</div>
 						<div class="price-selet pric-sclr1">
@@ -104,53 +89,46 @@
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<!--second-->
-			<div class="col-md-4 price-grid" style="padding-bottom: 30px">
-			<div class="price-block agile">
-				<div class="price-gd-top pric-clr2">
-					<h4>还需筹集金额</h4>
-					<h3 id="surplus2"></h3>
-				</div>
-				<div class="price-gd-bottom">
-					<div class="price-list">
-						<ul id="list_info2">
-							<!-- ajax 动态传输数据 -->
-						</ul>
-					</div>
-					<div class="price-selet pric-sclr2">
-						<a href="#" data-toggle="modal" data-target="#myModal1" >PICK</a>
-					</div>
-				</div>
-			</div>
-		</div>
-
-			<!--third-->
-			<div class="col-md-4 price-grid" style="padding-bottom: 30px">
-				<div class="price-block agile">
-					<div class="price-gd-top pric-clr3">
-						<h4>还需筹集金额</h4>
-						<h3 id="surplus3"></h3>
-					</div>
-					<div class="price-gd-bottom">
-						<div class="price-list">
-							<ul id="list_info3">
-								<!-- ajax 动态传输数据 -->
-							</ul>
-						</div>
-						<div class="price-selet pric-sclr3">
-							<a href="#" data-toggle="modal" data-target="#myModal1" >PICK</a>
-						</div>
-					</div>
-				</div>
-			</div>
+			</div>-->
 
 			<div class="clearfix"> </div>
 		</div>
 	</div>
 </div>
-<!-- footer -->
+
+
+
+
+
+<!-- lend -->
+<div id="lend_pick" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title text-dark"><strong>借出</strong></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <h5>借单号</h5>
+                    <label id="bill_id"></label>
+                </div>
+                <div class="form-group">
+                    <h5>输入借出的金额</h5>
+                    <input type="text" class="form-control" name="money" id="lend_money" placeholder="最少借出100元" >
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="lend">借出</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- lend -->
+
 	<div class="footer">
 		<div class="f-bg-w3l">
 				<div class="col-md-3 w3layouts_footer_grid">
