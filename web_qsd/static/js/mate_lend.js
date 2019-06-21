@@ -1,26 +1,26 @@
-/*var url = decodeURI(window.location.href);
+var url = decodeURI(window.location.href);
 var argsIndex = url .split("?");
 var money = argsIndex[1].split("&&")[0].split("=")[1];
 var pay_type = argsIndex[1].split("&&")[1].split("=")[1];
 var rate = argsIndex[1].split("&&")[2].split("=")[1];
-var limit_months = argsIndex[1].split("&&")[3].split("=")[1];*/
+var limit_months = argsIndex[1].split("&&")[3].split("=")[1];
 $(function () {
-    /*    $("#my_money").text(money+"元");
-        $("#my_rate").text(rate+"%");
-        $("#my_month").text(limit_months+"月");*/
+    $("#my_money").text(money+"元");
+    $("#my_rate").text(rate+"%");
+    $("#my_month").text(limit_months+"月");
     $.ajax({
-        type: "get",
-        url: "match.json",
+        type: "post",
+        url: "192.168.0.195:8080/lendMatch",
         xhrFields: {
             withCredentials: true
         },
-        /*      contentType: "application/json; charset=utf-8",
+              contentType: "application/json; charset=utf-8",
               data: JSON.stringify({
                   "expectRate": rate,
                   "intendMoney": money,
                   "payType": pay_type,
                   "limitMonths": limit_months
-              }),*/
+              }),
         dataType: "json",
         success: function (list) {
             if (list.length == 0) {
@@ -132,7 +132,7 @@ function get_bill_id(arg) {
 $("#lend").click(function () {
     $.ajax({
         type: "POST",
-        url: "#",
+        url: "192.168.0.195:8080/subLend",
         xhrFields: {
             withCredentials: true
         },
@@ -214,7 +214,6 @@ function carousel(root) {
             rotateCarousel(currImage);
         }
     }
-
     function rotateCarousel(imageIndex) {
         figure.style.transform = 'rotateY(' + imageIndex * -theta + 'rad)';
     }
