@@ -24,7 +24,7 @@ $(document).ready(function () {
                 }
                 $("#deadline").text(list[$i].deadline);
 
-                $("#unpayMoney_2").text(list[$i].unpayMoney);
+                $("#unpayMoney_2").text(list[$i].nextTimeShouldPay);
                 }
             $("#repay").css("visibility","visible");
 
