@@ -54,8 +54,6 @@ function getNowFormatDate() {
 $("#borrower_repay").click(function () {
     var repay = $("#b_repay_money").val();
     var unpay =  $("#unpayMoney").text().replace("元","").trim();
-    alert(repay);
-    alert(unpay);
     if(repay >= 10 && repay <= unpay) {
         $.ajax({
             type: "POST",
