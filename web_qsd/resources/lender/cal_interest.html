@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>借出方>匹配</title>
+    <link rel="icon" href="../../static/images/qsd_logo.ico" sizes="48x48" type="image/x-icon"/>
+    <!-- custom-theme -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <link href="../../static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../../static/css/jquery.countdown.css"/>
+    <link href="../../static/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
+    <link href="../../static/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../../static/css/footer.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../../static/css/font-awesome.css" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- banner -->
+<div class="main_section_agile inner" id="home">
+    <div class="agileits_w3layouts_banner_nav">
+
+        <nav class="navbar navbar-default">
+            <div class="navbar-header navbar-left">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1><a class="navbar-brand" href="index_lender.html"> <i class="fa fa-tree"></i> 青松贷</a></h1>
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <nav class="link-effect-2" id="link-effect-2">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index_lender.html" class="effect-3">首页</a></li>
+                        <li><a href="business_intro.html" class="effect-3">业务简介</a></li>
+                        <li class="dropdown active">
+                            <a class="dropdown-toggle effect-3" data-toggle="dropdown">我要借出<b
+                                    class="caret"></b></a>
+                            <ul class="dropdown-menu agile_short_dropdown">
+                                <li><a href="lend.html">借出匹配</a></li>
+                                <li><a href="cal_interest.html">利息计算器</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle effect-3" data-toggle="dropdown">个人中心<b
+                                    class="caret"></b></a>
+                            <ul class="dropdown-menu agile_short_dropdown">
+                                <li><a href="fund_account.html">个人账户</a></li>
+                                <li><a id="logout_btn">退出登录</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </ul>
+                </nav>
+            </div>
+        </nav>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- banner -->
+
+<!--匹配借单-->
+<!--强制转换背景色为白色-->
+<div class="plans-section" style="background: white">
+    <div class="container">
+        <div class="wthree_head_section">
+            <h3 class="w3l_header w3_agileits_header">利息 <span>计算器</span></h3>
+            <div class="row col-md-12">
+                <br>
+                <h5 class="col-md-10 col-md-offset-1 well" style="color: grey;line-height:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用利息计算器，
+                    帮您计算一下借款的总成本，包括每月需要偿还的金额及月利率等；
+                    同时，一份完整的还款计划时间表让您更好地了解还款的情况。青松贷采用的是通用的"等额本息法"，
+                    即确定每期的还款额，计算出期应支付的利息，再用确定的还款额减去当月应支付的利息就是本金的还款额。</h5>
+          <!--      <hr style= " border: 0.5px double ; color : #00F7DE " width ="80%" color =#987 cb 9 SIZE = 3>-->
+            </div>
+            <div class="row col-md-8 col-md-offset-2" style="padding-top: 40px; padding-bottom: 40px">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label class="bmd-label-floating">借款金额(元)</label>
+                        <input id="lendMoney" autocomplete="off" type="text" class="form-control" value=""placeholder="最多两位小数">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label class="bmd-label-floating">月利率</label>
+                        <select class="form-control" id="payRate">
+                            <option value="0.5">0.50%</option>
+                            <option value="1" >1.00%</option>
+                            <option value="1.5">1.50%</option>
+                            <option value="2">2.00%</option>
+                            <option value="2.5">2.50%</option>
+                            <option value="3">3.00%</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label class="bmd-label-floating">借款期限(月)</label>
+                        <input id="limitMonths" autocomplete="off" type="text" class="form-control" value="" placeholder="0-36的整数">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label class="bmd-label-floating">还款方式</label>
+                        <select class="form-control" id="payType">
+                            <option value="1">按月还</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="start_cal" class="btn btn-success col-md-2 col-md-offset-5"><h4>开始计算</h4> </button>
+            </div>
+            <!--计算结果-->
+            <div class="bs-docs-example col-md-12">
+                <table class="table table-striped" style="text-align: center;">
+                    <thead>
+                    <tr>
+                        <th>月份</th>
+                        <th>月偿还</th>
+                        <th>月还款本金</th>
+                        <th>利息</th>
+                        <th>余额</th>
+                    </tr>
+                    </thead>
+                    <tbody id="cal_result">
+                    <!--动态加载计算结果-->
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="f-bg-w3l">
+        <div class="col-md-3 w3layouts_footer_grid">
+            <h2>获取 <span>推送</span></h2>
+            <p id="push-1">通过提交邮箱,获取最新推送</p>
+            <form action="#" method="post">
+                <input type="email" name="Email" placeholder="请输入您的邮箱" required="">
+                <button class="btn1"><i class="fa fa-envelope-o" aria-hidden="true"></i></button>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+        <div class="col-md-4 w3layouts_footer_grid">
+            <h3>扫码 <span>关注</span></h3>
+            <ul class="con_inner_text midimg">
+                <li><a><img id="logo-1" src="../../static/images/index_images/pic1.jpg" alt=""
+                            class="img-responsive"/></a>
+                    <p class="p-1">官方QQ群</p></li>
+                <li><a><img alt="" class="img-responsive"/></a></li>
+                <li><a><img id="logo-2" src="../../static/images/index_images/pic1.jpg" alt=""
+                            class="img-responsive"/></a>
+                    <p class="p-2">微信公众号</p></li>
+            </ul>
+        </div>
+        <div class="col-md-2 w3layouts_footer_grid">
+            <h3>网站 <span>链接</span></h3>
+            <ul class="links">
+                <li><a id="footer-link-1" href="index_lender.html">首页</a></li>
+                <li><a id="footer-link-2" href="business_intro.html">业务简介</a></li>
+                <li><a id="footer-link-4" href="lend.html">我要借出</a></li>
+                <li><a id="footer-link-6" href="fund_account.html">个人账户</a></li>
+            </ul>
+        </div>
+        <div class="col-md-3 w3layouts_footer_grid">
+            <h2>联系 <span>我们</span></h2>
+            <ul class="con_inner_text">
+                <li><span id="logo-3" class="fa fa-map-marker" aria-hidden="true"></span><a
+                        id="address">辽宁省沈阳市浑南区创新路195号<label>东北大学(浑南校区)</label></a>
+                </li>
+                <li><span id="logo-4" class="fa fa-envelope-o" aria-hidden="true"></span> <a><a
+                        id="mail"
+                        href="mailto:1048737310@qq.com">1048737310@qq.com</a></a>
+                </li>
+                <li><span id="logo-5" class="fa fa-phone" aria-hidden="true"></span><a id="phone"> +86
+                    18640372196</a>
+                </li>
+            </ul>
+
+            <ul class="social_agileinfo">
+                <li><a href="#" class="w3_facebook"><i class="fa fa-qq"></i></a></li>
+                <li><a href="#" class="w3_twitter"><i class="fa fa-wechat"></i></a></li>
+                <li><a href="#" class="w3_instagram"><i class="fa fa-weibo"></i></a></li>
+                <li><a href="#" class="w3_google"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- //footer -->
+<!-- js -->
+<script type="text/javascript" src="../../static/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="../../static/js/bootstrap-3.1.1.min.js"></script>
+<script type="text/javascript" src="../../static/js/footer.js"></script>
+<script type="text/javascript" src="../../static/js/logout.js"></script>
+<script type="text/javascript" src="../../static/js/cal_interest.js"></script>
+
+</body>
+
+</html>
