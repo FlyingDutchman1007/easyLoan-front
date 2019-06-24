@@ -37,7 +37,7 @@ function calc_outputmoney(){
 //更新借出金额
 $("#intend_money").focusout(function () {
     var intend_money = $("#intend_money").val();
-    if(intend_money <= 0 || intend_money >=limit || intend_money % 100 != 0 ){
+    if(intend_money <= 0 || intend_money >limit || intend_money % 100 != 0 ){
         $("#intend_money").val("");
         calc_outputmoney();
     }else{
