@@ -6,7 +6,7 @@ $("#start_cal").click(function () {
     if(lendMoney != "" && limitMonths != "") {
         $.ajax({
             type: "post",
-            url: "192.168.0.195:8080/rateCalculator",
+            url: "http://192.168.0.195:8080/rateCalculator",
             xhrFields: {
                 withCredentials: true
             },
