@@ -144,8 +144,16 @@ $("#lend").click(function () {
         }),
         dataType: "json",
         success: function (message) {
-            if (message.state == "successful") {
+                 if (message.state == "successful") {
+                var rest = money - $("#lend_money").val();
                 alert("借出成功");
+                if(rest >= 0 ) {
+                    location.href = "lend_match.html?money="+ rest + "&&pay_type=" + pay_type +
+                    "&&rate=" + rate + "&&limit_months=" + periods * pay_type;
+                }else{
+                    location.href = "lend_match.html?money="+ money + "&&pay_type=" + pay_type +
+                        "&&rate=" + rate + "&&limit_months=" + periods * pay_type;
+                }
             } else {
                 alert("借出失败");
             }
